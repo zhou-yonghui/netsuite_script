@@ -1,0 +1,111 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+		<style type="text/css">
+		table {
+			font-family:"宋体","sans-serif",stsong;
+			font-size:8pt;
+			table-layout: fixed;
+			word-wrap:break-word;
+			word-break:break-all;
+		}
+</style>
+</head>
+<body style="width:377.95px;height:793.7px">
+	<div style="width:377.95px;height:793.7px">
+		<table>
+			<tr>
+				<td colspan="10" style="text-align: center;font-size: medium;">销售订单出货信息</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+			<tr>
+				<td style="font-size: small;">出货信息：</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span>订单号：</span></td>
+				<td>{{soNo}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span>配送国家：</span></td>
+				<td>{{country}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span>运输方式：</span></td>
+				<td>{{shipType}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span>保险类型：</span></td>
+				<td>{{bxType}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span>客户信息：</span></td>
+				<td>{{khInfo}}</td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><span>产品信息：</span></td>
+				<td></td>
+			</tr>
+			{{#items}}
+			<tr>
+				<td></td>
+				<td></td>
+				<td>{{str}}</td>
+			</tr>
+			{{/items}}
+			<tr>
+				<td></td>
+				<td><span>配送信息：</span></td>
+				<td>
+<!--					{{#psArr}}-->
+<!--					{{ps}}<br />-->
+<!--					{{/psArr}}-->
+				</td>
+			</tr>
+			{{#psArr}}
+			<tr>
+				<td></td>
+				<td></td>
+				<td>{{ps}}</td>
+			</tr>
+			{{/psArr}}
+			<tr>
+				<td></td>
+				<td><span>出货要求(后勤看):</span></td>
+				<td>
+<!--					{{#chyqArr}}-->
+<!--					{{chyq}} <br />-->
+<!--					{{/chyqArr}}-->
+				</td>
+			</tr>
+			{{#chyqArr}}
+			<tr>
+				<td></td>
+				<td></td>
+				<td>{{chyq}}</td>
+			</tr>
+			{{/chyqArr}}
+			<tr>
+				<td></td>
+				<td><span>运单号：</span></td>
+				<td>{{soYd}}</td>
+			</tr>
+<!--			<tr>-->
+<!--				<td></td>-->
+<!--				<td><span>运单号（对接）：</span></td>-->
+<!--				<td>运单号 （出货单需要有这项）</td>-->
+<!--			</tr>-->
+	  </table>	
+	</div>
+</body>
+</pdf>

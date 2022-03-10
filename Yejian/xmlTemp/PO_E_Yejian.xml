@@ -1,0 +1,278 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+    <head>
+        <style type="text/css">
+            table {
+            font-family:"宋体","sans-serif",stsong;
+            font-size:8.5px;
+            table-layout: fixed;
+            word-wrap:break-word;
+            word-break:break-all;
+            border-collapse:collapse;
+            }
+            .firsttd{
+                border-left: 1px solid #000;
+<!--                border-bottom: 1px solid #000;-->
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                <!--                padding-left: 10px;-->
+            }
+            .first2td{
+<!--                border-left: 1px solid #000;-->
+<!--                border-bottom: 1px solid #000;-->
+                border-right: 1px solid #000;
+                border-top: 1px solid #000;
+                <!--                padding-left: 10px;-->
+            }
+            .secendtd{
+                border-left: 1px solid #000;
+<!--                border-bottom: 1px solid #000;-->
+                border-right: 1px solid #000;
+                <!--                padding-left: 10px;-->
+            }
+            .secend2td{
+<!--                border-left: 1px solid #000;-->
+<!--                border-bottom: 1px solid #000;-->
+                border-right: 1px solid #000;
+                <!--                padding-left: 10px;-->
+            }
+        </style>
+    </head>
+    <body>
+        <!--        <div>-->
+        <table width="100%">
+            <tr>
+                <td colspan="10" align="center" style="font-size:25px">PURCHASE ORDER</td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+<!--            <tr>-->
+<!--                <td style="font-size: small;" colspan="6">-->
+<!--                    <span>-->
+<!--                        HONGKONG YEJIAN TECHNOLOGIES CO., LTD.<br />-->
+<!--                        7/F,SINO CENTRE 582-592 NATHAN ROAD<br />-->
+<!--                        MONGKOK KOWLOON, HK 9990777<br />-->
+<!--                    </span>-->
+<!--                </td>-->
+<!--                <td style="font-size: small;" colspan="1"><span></span></td>-->
+<!--                <td colspan="2"></td>-->
+<!--                <td colspan="1"></td>-->
+<!--            </tr>-->
+            <tr>
+                <td style="font-size: small;" colspan="6">
+                    <span>
+                        &nbsq;
+                    </span>
+                </td>
+                <td style="font-size: small;" colspan="1"><span></span></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="6">
+                    <span>
+                        HONGKONG YEJIAN TECHNOLOGIES CO., LTD.
+                    </span>
+                </td>
+                <td style="font-size: small;" colspan="1"><span></span></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="6">
+                    <span>
+                        7/F,SINO CENTRE 582-592 NATHAN ROAD
+                    </span>
+                </td>
+                <td style="font-size: small;" colspan="1"><span></span></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="6">
+                    <span>
+                        MONGKOK KOWLOON, HK 9990777
+                    </span>
+                </td>
+                <td style="font-size: small;" colspan="1"><span>PO NO.: </span></td>
+                <td style="font-size: small;" colspan="2">{{orderNo}}</td>
+                <td colspan="1"></td>
+            </tr>
+<!--            <tr>-->
+<!--                <td style="font-size: small;" colspan="6"><span></span></td>-->
+<!--                <td style="font-size: small;" colspan="1"><span>PO NO.: </span></td>-->
+<!--                <td colspan="2">{{orderNo}}</td>-->
+<!--                <td colspan="1"></td>-->
+<!--            </tr>-->
+            <tr>
+                <td style="font-size: small;" colspan="4"><span>{{locationAddr}}</span></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="1"></td>
+                <td colspan="2"></td>
+                <td colspan="1"></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Purchaser: </span></td>
+                <td colspan="2" style="font-size: small;"><span>{{employee}}</span></td>
+                <td colspan="1"></td>
+                <td></td>
+<!--                <td></td>-->
+                <td style="font-size: small;"><span>DATE: </span></td>
+                <td colspan="2" style="font-size: small;">{{orderDate}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;text-align:center;font-size:small" colspan="2"><span>Contact NO.:</span></td>
+                <td colspan="2"><span>{{employeePhone}}</span></td>
+                <td colspan="1"></td>
+                <td></td>
+<!--                <td></td>-->
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <!--                <tr>-->
+            <!--                    <td style="font-size: small;" colspan="4">-->
+
+            <!--                    </td>-->
+            <!--                    <td style="font-size: small;" colspan="4">-->
+
+            <!--                    </td>-->
+            <!--                    <td colspan="2"></td>-->
+            <!--                </tr>-->
+
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Supplier</span></td>
+                <td></td>
+                <td colspan="2"></td>
+                <td style="font-size: small;" colspan="2"><span>SHIP TO</span></td>
+<!--                <td></td>-->
+                <td></td>
+                <td colspan="2"></td>
+<!--                <td></td>-->
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Company:</span></td>
+                <td colspan="3">{{vendorCompany}}</td>
+                <td style="font-size: small;" colspan="2"><span>Company:</span></td>
+                <td colspan="3">{{locationCompany}}</td>
+<!--                <td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Address:</span></td>
+                <td colspan="3">
+                    {{#vbAddrArr}}
+                    {{vbAddr}}<br />
+                    {{/vbAddrArr}}
+                </td>
+                <td style="font-size: small;" colspan="2"><span>Address:</span></td>
+                <td colspan="3">
+                    {{#locAddrArr}}
+                    {{locAddr}}<br />
+                    {{/locAddrArr}}
+                </td>
+<!--                <td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Contact:</span></td>
+                <td colspan="3">{{vendorEmpolyee}}</td>
+                <td style="font-size: small;" colspan="2"><span>Contact:</span></td>
+                <td colspan="3">{{locationEmpolyee}}</td>
+<!--                <td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Tel:</span></td>
+                <td colspan="3">{{vendorPhone}}</td>
+                <td style="font-size: small;" colspan="2"><span>Tel:</span></td>
+                <td colspan="3">{{locationPhone}}</td>
+<!--                <td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="2"><span>Email:</span></td>
+                <td colspan="3">{{vendorEmail}}</td>
+                <td style="font-size: small;" colspan="2"><span>Email:</span></td>
+                <td colspan="3">{{locationEmail}}</td>
+<!--                <td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td style="font-size: small;text-align:center;" colspan="2"><span>Payment Term:</span></td>
+                <td colspan="3">{{vendorPayType}}</td>
+                <td style="font-size: small;text-align:center;" colspan="2"><span>Shipment Term:</span></td>
+                <td colspan="3">
+                    {{#shipArr}}
+                    {{shipTk}}<br />
+                    {{/shipArr}}
+                </td>
+<!--                <td colspan="2"></td>-->
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <tr>
+                <td colspan="10">&#12288;</td>
+            </tr>
+            <tr style="border-bottom:1px solid">
+                <td colspan="2" class="firsttd"><span style="font-weight: bold;">Model</span></td>
+                <td class="first2td"><span style="font-weight: bold;">Brand</span></td>
+                <td colspan="2" class="first2td"><span style="font-weight: bold;">Description</span></td>
+                <td class="first2td"><span style="font-weight: bold;">Qty</span></td>
+                <td class="first2td"><span style="font-weight: bold;">Unit</span></td>
+                <td class="first2td"><span style="font-weight: bold;text-align:center;font-size:8px">Unit Price(USD)</span></td>
+                <td colspan="1" class="first2td"><span style="font-weight: bold;text-align:center;font-size:7px">Total Price(USD)</span></td>
+                <td class="first2td"><span style="font-weight: bold;">Remarks</span></td>
+            </tr>
+            {{#items}}
+<!--            <div style="width:100%;white-space:normal;word-wrap:break-word;word-break:break-all;">-->
+            <tr style="border-bottom:1px solid">
+                <td colspan="2" style="font-size: 8px;" class="secendtd"><div style=""><span>{{des}}</span></div></td>
+                <td style="font-size: 8px;" class="secend2td"><div style=""><span>{{brand}}</span></div></td>
+                <td colspan="2" style="font-size: 8px;" class="secend2td"><div style=""><span>{{miaoshu}}</span></div></td>
+                <td style="font-size: 8px;" class="secend2td"><div style=""><span>{{qty}}</span></div></td>
+                <td style="font-size: 8px;" class="secend2td"><div style=""><span>{{cusUnit}}</span></div></td>
+                <td style="font-size: 8px;" class="secend2td"><div style=""><span>{{rate}}</span></div></td>
+                <td colspan="1" style="font-size: 8px;" class="secend2td"><div style=""><span>{{amount}}</span></div></td>
+                <td style="font-size: 8px;" class="secend2td"><div style=""><span>{{line_memo}}</span></div></td>
+            </tr>
+            {{/items}}
+            <tr>
+                <td colspan="2"></td>
+                <td></td>
+                <td colspan="2"></td>
+                <td></td>
+                <td></td>
+                <td style="font-size: small;"><span>Total:</span></td>
+                <td colspan="1" style="font-size:12px">{{sum}}</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td style="font-size: small;" colspan="10"><span>Total: U.S. DOLLARS ：{{bigEnglishSum}}</span></td>
+            </tr>
+            <tr>
+                <td>&#12288;</td>
+                <td colspan="9">&#12288;</td>
+            </tr>
+            <tr>
+                <td colspan="10" style="font-size: small;">Note:All items should be  NEW RETAIL/FACTORY SEALED/ORIGINAL/CLEAN SN. </td>
+            </tr>
+        </table>
+        <!--        </div>-->
+    </body>
+</pdf>

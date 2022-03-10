@@ -1,0 +1,291 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+<head>
+		<style type="text/css">
+		table {
+			font-family:"Arial","sans-serif",stsong;
+			font-size:8.5pt;
+			table-layout: fixed;
+			word-wrap:break-word;
+			word-break:break-all;
+		}
+		.enaddress{
+			font-family:"Arial","sans-serif";
+		}
+		.bold{
+			font-weight: bold;
+		}
+		.mainrow{
+				border-bottom: 1px solid #000;
+				padding:0px;
+			  }
+		.specialrow{
+				border-bottom: 1px solid #000;
+				border-top: 1px solid #000;
+				padding:0px;
+			  }
+		.specialrow>td{
+				border-left: 1px solid #000;
+				border-right: 1px solid #000;
+			  }
+		.wholeborder{
+				border-left:1px solid #000;
+				border-top:1px solid #000;
+				border-bottom:1px solid #000;
+				padding:0px;
+			  }
+			  .subtablemainrow td{
+				  border-right: 1px solid #000;
+				  border-bottom: 1px solid #000;
+
+			  }
+			  .subtablemainrowtop{
+			  	border-top: 1px solid #000;
+			  }
+			  .lastrow td{
+				  border-right: 1px solid #000;
+			  }
+			  .firsttd{
+				  border-left: 1px solid #000;
+				  padding-left: 10px;
+			  }
+			  .firsttdr{
+                  border-right: 1px solid #000;
+			  }
+			  .descriptionColumn{
+				  width:25%;
+			  }
+			  img{
+				width:50;
+				height:50;
+			  }
+			  .acbo td{
+				  border-bottom: 1px solid #000;
+				  }
+			  .topm td{
+				  border-top: 1px solid #000;
+				  padding-top : 30px ;
+				  }
+			  .topp td{
+				border-top: 1px solid rgb(252, 252, 252);
+				padding-top: 10px;
+			  }
+			  .backg td{
+				  background-color: rgb(144, 195, 253);
+				  color: rgb(27, 27, 26);
+<!--			      border-top: 1px solid #000;-->
+<!--			      border-left:1px solid #000;-->
+<!--			      border-right:1px solid #000;-->
+<!--				  border-bottom: 1px solid #000;-->
+			  }
+			.backg2 td{
+				background-color: rgb(144, 195, 253);
+				color: rgb(27, 27, 26);
+			}
+			.backgfir{
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-right: 1px solid #000;
+				border-left: 1px solid #000;
+			}
+			.backgsec{
+				border-top: 1px solid #000;
+				border-bottom: 1px solid #000;
+				border-right: 1px solid #000;
+			}
+			  /* .ul td{
+				border-bottom: 1px solid #000;
+			  } */
+			   .pdm td{
+				  padding-bottom: 30px;
+			  }
+			  .leftb{
+				  border-left:1 solid #000;
+			  }
+			  
+
+        </style>
+</head>
+<body>
+	<table width="100%">
+		<tr>
+			<td colspan="5" rowspan="3" width="50%"><span><img height="80px" width="110%" src="https://7373203.app.netsuite.com/core/media/media.nl?id=146&amp;c=7373203&amp;h=0ObYVz25ZfZZEx4ohqKq_4AZZA4OGuDn2Azm1nPA5G9DoubJ&amp;fcts=20210928015025&amp;whence="></img></span></td>
+			<td colspan="5" width="50%" align="right" style="font-size:x-large;"><span class="bold">
+				Quotation	
+			</span></td>
+		</tr>
+		<tr class="ul">
+			<td colspan="5" width="50%" align="right"><span>TEL:{{phone}}</span></td>
+		</tr>
+	</table>
+	<div>
+		<span>__________________________________________________________________________________________</span>
+	</div>
+    <table width="100%">
+	<tr width="100%">
+	<td padding="0" width="100%">
+	<table width="100%">
+		<tr>
+			<td colspan="5" width="50%"><span>Quota No.: {{number}}</span></td>
+			<td align="right" colspan="5" width="50%"><span>Date: {{date}}</span></td>
+		</tr>
+
+		<tr class="backg">
+			<td colspan="5" width="50%" style="border-top: 1px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Customer Info: </span></td>
+			<td colspan="5" width="50%" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Sale Rep:</span></td>
+		</tr>
+
+    	<tr class="topp">
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoCountry}}</span></td>
+			<td colspan="5" width="50%"><span>{{company}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoName}}</span></td>
+			<td colspan="5" width="50%"><span>{{addr}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoCompany}}</span></td>
+			<td colspan="5" width="50%"><span>{{addr2}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoAddr}}</span></td>
+			<td colspan="5" width="50%"><span>{{addr3}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoAddr2}}</span></td>
+			<td colspan="5" width="50%"><span>{{phone}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoCity}}</span></td>
+			<td colspan="5" width="50%"><span>{{city}} {{cityCode}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoRegion}}</span></td>
+			<td colspan="5" width="50%"><span>{{zip}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span>{{customerInfoPostCode}}</span></td>
+			<td colspan="5" width="50%"><span>Email:  {{email}}</span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span></span></td>
+			<td colspan="5" width="50%"><span></span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span></span></td>
+			<td colspan="5" width="50%"><span></span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span></span></td>
+			<td colspan="5" width="50%"><span></span></td>
+		</tr>
+		<tr>
+			<td class="descriptionColumn" colspan="5" width="50%"><span></span></td>
+			<td colspan="5" width="50%"><span></span></td>
+		</tr>
+		<tr class="backg2">
+			<td colspan="2" style="border-top: 1px solid #000;border-left:1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Part No.</span></td>
+			<td colspan="3" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Description</span></td>
+			<td colspan="1" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Qty</span></td>
+			<td colspan="1" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Unit Price</span></td>
+			<td colspan="1" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Ext.Price</span></td>
+			<td colspan="1" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">Condition</span></td>
+			<td colspan="1" style="border-top: 1px solid #000;border-right:1px solid #000;border-bottom: 1px solid #000;"><span class="bold">LeadTime</span></td>
+<!--			<td colspan="2" ><span class="bold">Part No.</span></td>-->
+<!--			<td colspan="3" ><span class="bold">Description</span></td>-->
+<!--			<td colspan="1" ><span class="bold">Qty</span></td>-->
+<!--			<td colspan="1" ><span class="bold">Unit Price</span></td>-->
+<!--			<td colspan="1" ><span class="bold">Ext.Price</span></td>-->
+<!--			<td colspan="1"><span class="bold">Condition</span></td>-->
+<!--			<td colspan="1"><span class="bold">LeadTime</span></td>-->
+        </tr>
+		{{#items}}
+        <tr class="subtablemainrow">
+        <td colspan="2" class="firsttd"><span>{{cpxh}}</span></td>
+			<td colspan="3"><span>{{des}}</span></td>
+            <td colspan="1"><span>{{qty}}</span></td>
+            <td colspan="1"><span>{{currencyDis}}{{rate}}</span></td>
+            <td colspan="1"><span>{{currencyDis}}{{ext}}</span></td>
+            <td colspan="1"><span>{{shuxing}}</span></td>
+            <td colspan="1"><span>{{jiaoqi}}</span></td>
+        </tr>
+        {{/items}}
+		<tr>
+			<td style="padding-bottom: 30px;"></td>
+		</tr>
+<!--		<tr>-->
+<!--			<td colspan="6"></td>-->
+<!--			<td colspan="2" style="background-color:rgb(144, 195, 253);" align="right"><span>Subtotal:</span></td>-->
+<!--			<td style="background-color:rgb(144, 195, 253);" align="right"><span>{{currencyDis}}</span></td>-->
+<!--			<td style="background-color:rgb(144, 195, 253);"><span>{{subSum}}</span></td>-->
+<!--		</tr>-->
+<!--		实验-->
+		<tr>
+			<td colspan="7" rowspan="8" align="left">
+				<span class="bold">Kindly note:	</span> <br />
+					{{#tkArr}}
+						{{note}}<br />
+					{{/tkArr}}
+				<span class="bold">Remark: </span> <br />
+					{{#remark}}
+						{{remark}}<br />
+					{{/remark}}
+			</td>
+			<td colspan="3" rowspan="8">
+				<div align="right">
+					<table>
+						<tr>
+							<td colspan="6"></td>
+							<td colspan="2" style="background-color:rgb(144, 195, 253);" align="right"><span>Subtotal:</span></td>
+							<td style="background-color:rgb(144, 195, 253);" align="right"><span>{{currencyDis}}</span></td>
+							<td style="background-color:rgb(144, 195, 253);"><span>{{subSum}}</span></td>
+						</tr>
+						{{#fyItems}}
+						<tr>
+							<td colspan="6"><span class="bold"></span></td>
+							<td colspan="2" style="background-color:rgb(144, 195, 253);" align="right"><span>{{cpxh}}</span></td>
+							<td style="background-color:rgb(144, 195, 253);" align="right"><span>{{currencyDis}}</span></td>
+							<td style="background-color:rgb(144, 195, 253);"><span>{{ext}}</span></td>
+						</tr>
+						{{/fyItems}}
+						<tr>
+							<td colspan="6" rowspan="1"></td>
+							<td colspan="2" style="background-color:rgb(144, 195, 253);" align="right"><span>Total:</span></td>
+							<td style="background-color:rgb(144, 195, 253);" align="right"><span>{{currencyDis}}</span></td>
+							<td style="background-color:rgb(144, 195, 253);"><span>{{sum}}</span></td>
+						</tr>
+					</table>
+				</div>
+			</td>
+		</tr>
+    </table>
+	</td>
+	</tr>
+  </table>
+  <table width="100%" style="margin-top: 30px;">
+	<tr>
+		<td colspan="10">
+			<span>
+			<img height="80px" width="130%" src="https://7373203.app.netsuite.com/core/media/media.nl?id=143&amp;c=7373203&amp;h=59w1PWlhs2V7ZV2LU2cab1J_u2qKIlWFanhdOP2uFWbDb7zn&amp;fcts=20210928013909&amp;whence="></img>
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="10" style="font-size: small;">
+			<span>
+				What's best sellers? New arrival? Huge inventory? Visit www.router-switch.com
+			</span>
+		</td>
+	</tr>
+	<tr>
+		<td colspan="10" style="font-size: small;">
+			<span>
+				Contact Us: Web:www.router-switch.com, Email: cisco@router-switch.com,Tel:  {{phone}}
+			</span>
+		</td>
+	</tr>
+	
+  </table>	
+</body>
+</pdf>

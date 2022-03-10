@@ -1,0 +1,235 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf>
+	<head>
+		<style type="text/css">
+		table {
+			font-family:"Arial","sans-serif",stsong;
+			font-size:8.5pt;
+			table-layout: fixed;
+			word-wrap:break-word;
+			word-break:break-all;
+		}
+		.enaddress{
+			font-family:"Arial","sans-serif";
+		}
+		.bold{
+		font-weight: bold;
+		}
+		.mainrow{
+				border-bottom: 1px solid #000;
+				padding:0px;
+			  }
+		.specialrow{
+				border-bottom: 1px solid #000;
+				border-top: 1px solid #000;
+				padding:0px;
+			  }
+		.specialrow>td{
+				border-left: 1px solid #000;
+				border-right: 1px solid #000;
+			  }
+		.wholeborder{
+				border-left:1px solid #000;
+				border-top:1px solid #000;
+				border-bottom:1px solid #000;
+				padding:0px;
+			  }
+			  .subtablemainrow td{
+				  border-right: 1px solid #000;
+				  border-bottom: 1px solid #000;
+				  border-left: 1px solid #000;
+			  }
+			  .subtablemainrowtop{
+			      border-top: 1px solid #000;
+			  }
+			  .lastrow td{
+				  border-right: 1px solid #000;
+			  }
+			  .firsttd{
+				  border-left: 1px solid #000;
+				  padding-left: 10px;
+			  }
+			  .firsttdr{
+                  border-right: 1px solid #000;
+			  }
+			  .descriptionColumn{
+				  width:25%;
+			  }
+			  img{
+				width:50;
+				height:50;
+			  }
+			  .acbo td{
+				  border-bottom: 1px solid #000;
+				  }
+			  .topm td{
+				  border-top: 1px solid #000;
+				  padding-top : 10px ;
+				  }
+			  .topp td{
+				border-top: 1px solid rgb(252, 252, 252);
+				padding-top: 10px;
+			  }
+			  <!-- .backg td{
+				  background-color: blue;
+				  color: #333399;
+			  } -->
+</style>
+</head>
+<body>
+	<div >
+		<span>
+		<img width='127%' height='100px' src="https://7373203.app.netsuite.com/core/media/media.nl?id=38&amp;c=7373203&amp;h=ApbImlJW7huZ4C85da5vjNYGwmMccryeviaquWUKnv7pvm8Z"></img>
+	</span></div>
+    <table width="100%">
+
+	<tr width="100%">
+	<td padding="0" width="100%">
+	<table width="100%">
+		<tr class="topp">
+			<td class="descriptionColumn" colspan="5" width="50%"><span class="bold">Shipping address: </span></td>
+			<td class="" colspan="2"><span class="bold" style="float:right">Invoice No.: </span></td>
+			<td class="" colspan="3"><span style="float:left">{{piNo}}</span></td>
+		</tr>
+		<tr>
+			<td colspan="5" width="50%">
+				<span>
+					{{#customerInfoArr}}
+					{{customerInfo}}<br />
+					{{/customerInfoArr}}
+				</span>
+			</td>
+			<td colspan="2">
+				<span class="bold" style="float:right">
+					{{#piRight_arr}}
+					{{rightTopInfo}}<br />
+					{{/piRight_arr}}
+				</span>
+			</td>
+			<td colspan="3">
+				<span style="float:left">
+					{{#piRight_arr}}
+					{{rightInfo}}<br />
+					{{/piRight_arr}}
+				</span>
+			</td>
+		</tr>
+		<tr>
+			<td colspan="5" width="50%"><span></span></td>
+			<td colspan="2"><span class="bold" style="float:right"></span></td>
+			<td colspan="3"><span style="float:left"></span></td>
+		</tr>
+		<tr>
+			<td colspan="5" width="50%"><span></span></td>
+			<td colspan="2"><span class="bold" style="float:right"></span></td>
+			<td colspan="3"><span style="float:left"></span></td>
+		</tr>
+		<tr>
+			<td colspan="5" width="50%"><span></span></td>
+			<td colspan="2"><span class="bold" style="float:right"></span></td>
+			<td colspan="3"><span style="float:left"></span></td>
+		</tr>
+		<tr>
+			<td colspan="5" width="50%"><span></span></td>
+			<td colspan="2"><span class="bold" style="float:right"></span></td>
+			<td colspan="3"><span style="float:left"></span></td>
+		</tr>
+
+		<!--产品明细信息-->
+		<tr style="background-color:#333399">
+		<td colspan="1" style="color:white" class="firsttd"><span class="bold" style="font-size:8px">No.</span></td>
+		<td colspan="2" style="color:white"><span class="bold" style="font-size:8px">Part No.</span></td>
+		<td colspan="3" style="color:white"><span class="bold" style="font-size:8px">Item Description</span></td>
+		<td colspan="1" style="color:white"><span class="bold" style="font-size:8px">Qty</span></td>
+		<td colspan="2" style="color:white"><span class="bold" style="font-size:8px">Unit Price</span></td>
+		<td colspan="1" style="color:white"><span class="bold" style="font-size:8px">Ext. Price</span></td>
+		</tr>
+		{{#items}}
+		<tr class="subtablemainrow">
+			<td colspan="1" align="center" class="firsttd" vertical-align="center" style="font-size:8px">{{no}}</td>
+			<td colspan="2"><span style="font-size:8px">{{sku}}</span></td>
+			<td colspan="3"><span style="font-size:8px">{{des}}</span></td>
+			<td colspan="1"><span style="font-size:8px">{{qty}}</span></td>
+			<td colspan="2"><span style="font-size:8px">{{currencyDis}}{{rate}}</span></td>
+			<td colspan="1"><span style="font-size:8px">{{currencyDis}}{{ext}}</span></td>
+		</tr>
+		{{/items}}
+
+		{{#fyItems}}
+		<tr class="subtablemainrow">
+			<td colspan="7"><span></span></td>
+			<td colspan="2" align="right" class="bold"><span>{{cpxh}}</span></td>
+			<td colspan="1"><span>{{currencyDis}}{{ext}}</span></td>
+		</tr>
+		{{/fyItems}}
+		<tr class="subtablemainrow">
+			<td colspan="7"><span></span></td>
+			<td colspan="2" align="right" class="bold"><span>Total:</span></td>
+			<td colspan="1"><span>{{currencyDis}}{{sum}}</span></td>
+		</tr>
+		<tr class="subtablemainrow">
+			<td align="left" colspan="7">
+				<span class="bold" font-size="90%">Bank Wire Transfer Information: <br /></span>
+				<span>
+<!--					{{bankInfoCode}}<br />-->
+<!--					{{bankInfoBanker}}<br />-->
+<!--					{{bankInfoAddr}}<br />-->
+<!--					{{bankInfoAccount}}<br />-->
+<!--					{{bankInfoBeneName}}<br />-->
+					{{#bankInfo}}
+						{{bankInfo}}<br />
+					{{/bankInfo}}
+				</span>
+			</td>
+			<td colspan="2"></td>
+			<td colspan="1"></td>
+		</tr>
+
+		<tr>
+			<td colspan="5">
+				<span>Kindly note:</span>
+			</td>
+			<td colspan="5" align='right'>
+				<span>On behalf of {{companyName}}</span>
+			</td>
+		</tr>
+		{{#tkArr}}
+		<tr>
+			<td colspan="5"><span>{{note}}</span></td>
+			<td colspan="5"><span></span></td>
+		</tr>
+		{{/tkArr}}
+
+		<tr rowspan="2">
+			<td colspan="10">
+				<div style="padding-left:530px;"><img width='' height='80px' src="{{dianziz}}"></img></div>
+			</td>
+		</tr>
+
+		<tr>
+			<td colspan="5">
+				<span></span>
+			</td>
+			<td colspan="5" align='right'>
+				<div style="padding-top:0px"><span>Signature:  --------------------------------- </span></div>
+			</td>
+		</tr>
+
+	</table>
+	</td>
+	</tr></table>
+	<div >
+		<img width='63.5%' height='100px' src="https://7373203.app.netsuite.com/core/media/media.nl?id=39&amp;c=7373203&amp;h=uDoiUECgLaYJtAUrnQmkGOrN5bGc2w2nlSdIiiKFZU4q70-V&amp;fcts=20210922001746&amp;whence="></img>
+	</div>
+	<!-- #31849B -->
+	<table width="99.8%" style="background-color:#31849B;">
+		<tr colspan="10">
+			<td style="color:white" align="center" vertical-align="center"><span>if you require further information,Please contact our Sales Manage: {{signature}}</span></td>
+		</tr>
+		<tr colspan="10">
+			<td style="color:white" align="center" vertical-align="center"><span>on +852-30691898(Tel) or +86-13590240902  E-mail : {{salesEmail}}</span></td>
+		</tr>
+	</table>
+</body>
+</pdf>

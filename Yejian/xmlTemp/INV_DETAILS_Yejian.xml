@@ -1,0 +1,548 @@
+<?xml version="1.0"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:o="urn:schemas-microsoft-com:office:office"
+ xmlns:x="urn:schemas-microsoft-com:office:excel"
+ xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet"
+ xmlns:html="http://www.w3.org/TR/REC-html40">
+ <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+  <Author>Hankin Yang</Author>
+  <LastAuthor>Hankin Yang</LastAuthor>
+  <Created>2019-11-07T02:32:00Z</Created>
+  <LastSaved>2019-11-07T02:32:32Z</LastSaved>
+  <Version>16.00</Version>
+ </DocumentProperties>
+ <OfficeDocumentSettings xmlns="urn:schemas-microsoft-com:office:office">
+  <AllowPNG/>
+ </OfficeDocumentSettings>
+ <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+  <WindowHeight>12300</WindowHeight>
+  <WindowWidth>28800</WindowWidth>
+  <WindowTopX>32767</WindowTopX>
+  <WindowTopY>450</WindowTopY>
+  <ProtectStructure>False</ProtectStructure>
+  <ProtectWindows>False</ProtectWindows>
+ </ExcelWorkbook>
+ <Styles>
+  <Style ss:ID="Default" ss:Name="Normal">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="等线" x:CharSet="134" ss:Size="11" ss:Color="#000000"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s62" ss:Name="常规 5 2 2">
+   <Alignment ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="宋体" x:CharSet="134" ss:Size="12"/>
+   <Interior/>
+   <NumberFormat/>
+   <Protection/>
+  </Style>
+  <Style ss:ID="s64" ss:Parent="s62">
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s66" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="14"
+    ss:Bold="1"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s68" ss:Parent="s62">
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s69" ss:Parent="s62">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s70" ss:Parent="s62">
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s71" ss:Parent="s62">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center"/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s72" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s74" ss:Parent="s62">
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s75" ss:Parent="s62">
+   <Alignment ss:Horizontal="Left" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s76" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss"/>
+   <Interior ss:Color="#F2F2F2" ss:Pattern="Solid"/>
+   <NumberFormat ss:Format="#,##0.00_ "/>
+  </Style>
+  <Style ss:ID="s77" ss:Parent="s62">
+   <Alignment ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s78" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+  </Style>
+  <Style ss:ID="s80" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:ShrinkToFit="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+   <NumberFormat/>
+  </Style>
+  <Style ss:ID="s81" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:ShrinkToFit="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+   <NumberFormat ss:Format="#,##0.00_ "/>
+  </Style>
+  <Style ss:ID="s83" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:ShrinkToFit="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+   <NumberFormat ss:Format="_ * #,##0.00_ ;_ * \-#,##0.00_ ;_ * &quot;-&quot;??_ ;_ @_ "/>
+  </Style>
+  <Style ss:ID="s84" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders/>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior ss:Color="#FFFFFF" ss:Pattern="Solid"/>
+  </Style>
+  <Style ss:ID="s85" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+   <NumberFormat ss:Format="#,##0_ "/>
+  </Style>
+  <Style ss:ID="s86" ss:Parent="s62">
+   <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:ShrinkToFit="1"/>
+   <Borders>
+    <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1"/>
+    <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1"/>
+   </Borders>
+   <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="11"/>
+   <Interior/>
+   <NumberFormat ss:Format="0.00_);[Red]\(0.00\)"/>
+  </Style>
+ </Styles>
+ <Worksheet ss:Name="sheet1">
+  <Names>
+   <NamedRange ss:Name="Print_Area" ss:RefersTo="='2.2报表 Excel'!#REF!"/>
+  </Names>
+  <Table  ss:DefaultRowHeight="17.25">
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="57.75"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="162"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="169.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="162.75"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="154.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="137.25" ss:Span="1"/>
+   <Column ss:Index="8" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="172.5"/>
+   <Column ss:Index="256" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="261" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="512" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="517" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="768" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="773" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="1024" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="1029" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="1280" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="1285" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="1536" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="1541" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="1792" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="1797" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="2048" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="2053" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="2304" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="2309" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="2560" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="2565" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="2816" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="2821" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="3072" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="3077" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="3328" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="3333" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="3584" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="3589" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="3840" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="3845" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="4096" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="4101" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="4352" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="4357" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="4608" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="4613" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="4864" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="4869" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="5120" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="5125" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="5376" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="5381" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="5632" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="5637" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="5888" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="5893" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="6144" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="6149" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="6400" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="6405" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="6656" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="6661" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="6912" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="6917" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="7168" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="7173" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="7424" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="7429" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="7680" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="7685" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="7936" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="7941" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="8192" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="8197" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="8448" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="8453" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="8704" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="8709" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="8960" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="8965" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="9216" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="9221" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="9472" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="9477" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="9728" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="9733" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="9984" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="9989" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="10240" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="10245" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="10496" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="10501" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="10752" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="10757" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="11008" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="11013" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="11264" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="11269" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="11520" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="11525" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="11776" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="11781" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="12032" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="12037" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="12288" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="12293" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="12544" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="12549" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="12800" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="12805" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="13056" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="13061" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="13312" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="13317" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="13568" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="13573" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="13824" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="13829" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="14080" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="14085" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="14336" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="14341" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="14592" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="14597" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="14848" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="14853" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="15104" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="15109" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="15360" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="15365" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="15616" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="15621" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="15872" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="15877" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Column ss:Index="16128" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75"
+    ss:Span="4"/>
+   <Column ss:Index="16133" ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="97.5"/>
+   <Column ss:StyleID="s64" ss:AutoFitWidth="0" ss:Width="75.75" ss:Span="2"/>
+   <Row ss:AutoFitHeight="0" ss:Height="62.25">
+    <Cell ss:MergeAcross="7" ss:StyleID="s66"><ss:Data ss:Type="String" ><B>12月应付款</B></Data></Cell>
+    <Cell ss:StyleID="s68"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="18.9375">
+    <Cell ss:StyleID="s69"><ss:Data ss:Type="String" >日期自：{{head.datestart}}</Data></Cell>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s68"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="18.9375">
+    <Cell ss:StyleID="s69"><Data ss:Type="String">日期至：{{head.dateend}}</Data></Cell>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s69"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s70"/>
+    <Cell ss:StyleID="s68"/>
+   </Row>
+   <Row ss:AutoFitHeight="0" ss:Height="32.0625" ss:StyleID="s71">
+    <Cell ss:StyleID="s72"><Data ss:Type="String">品牌</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">产品名称</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">数量</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">单价</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">采购单日期</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">供应商</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">GPL</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">折扣(当月1-c/6.47/H)</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">折扣(实时6.53)</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">GLP折扣率是否异常</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">ERP入库时间</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">汇率6.47本月采购单价(USD)=c/汇率</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">历史最近销售单价</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">毛利(1-M/N)</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">备注</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">历史最近采购单价</Data></Cell>
+    <Cell ss:StyleID="s72"><Data ss:Type="String">本月采购价降(-)/涨(+)(C-a)/a</Data></Cell>
+    <Cell ss:StyleID="s74"/>
+   </Row>
+   {{#lines}}
+   <Row ss:AutoFitHeight="0" ss:Height="30" ss:StyleID="s78">
+    <Cell ss:StyleID="s85"><Data ss:Type="Number">{{seq}}</Data></Cell>
+    <Cell ss:StyleID="s80"><Data ss:Type="String">{{subsidiary}}</Data></Cell>
+    <Cell ss:StyleID="s81"><Data ss:Type="String">{{date}}</Data></Cell>
+    <Cell ss:StyleID="s86"><Data ss:Type="Number">{{created_from}}</Data></Cell>
+    <Cell ss:StyleID="s81"><Data ss:Type="String">{{store}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{customer}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{sku}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{quantity}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{currency}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{income_w}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{cost_w}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{income}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{cost}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{gross}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{memo}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{po_pri}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="Number">{{po_pri_do}}</Data></Cell>
+    <Cell ss:StyleID="s83"><Data ss:Type="String"> </Data></Cell>
+    <Cell ss:StyleID="s84"/>
+   </Row>
+   {{/lines}}
+  </Table>
+  <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+   <PageSetup>
+    <Layout x:Orientation="Landscape" x:CenterHorizontal="1"/>
+    <Header x:Margin="0.2"/>
+    <Footer x:Margin="0.23999999999999996"/>
+    <PageMargins x:Bottom="0.35" x:Left="0.2" x:Right="0.2" x:Top="0.35"/>
+   </PageSetup>
+   <Unsynced/>
+   <Print>
+    <ValidPrinterInfo/>
+    <PaperSizeIndex>9</PaperSizeIndex>
+    <HorizontalResolution>300</HorizontalResolution>
+    <VerticalResolution>200</VerticalResolution>
+   </Print>
+   <PageBreakZoom>60</PageBreakZoom>
+   <Selected/>
+   <DoNotDisplayGridlines/>
+   <Panes>
+    <Pane>
+     <Number>3</Number>
+     <ActiveRow>7</ActiveRow>
+     <ActiveCol>7</ActiveCol>
+    </Pane>
+   </Panes>
+   <ProtectObjects>False</ProtectObjects>
+   <ProtectScenarios>False</ProtectScenarios>
+  </WorksheetOptions>
+ </Worksheet>
+</Workbook>
