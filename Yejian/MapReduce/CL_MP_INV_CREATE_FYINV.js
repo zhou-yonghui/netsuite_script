@@ -3,7 +3,7 @@
  * @NApiVersion 2.x
  * @NScriptType MapReduceScript
  */
-define(
+ define(
     ['N/search', 'N/record', 'N/task','N/file','N/runtime','N/format'],
     function(search, record, task,file,runtime,format) {
         function getInputData() {
@@ -62,7 +62,8 @@ define(
                         log.debug('so_data',so_data);
                         if(so_data != 'null'){
                             if(so_data.hk_sum_amount != 0 || so_data.hk_sum_amount != null || so_data.hk_sum_amount != ' '){
-                                doSome(so_id,so_data,value);
+                                var so_inv_id = value.id;
+                                doSome(so_id,so_data,so_inv_id);
                             }
                         }
                     }
@@ -99,8 +100,8 @@ define(
                 return 'null';
             }
         }
-        function doSome(so_id,so_data,value) {
-            var so_inv_id = value.id;
+        function doSome(so_id,so_data,so_inv_id) {
+            log.debug('sale inv',so_inv_id);
             var ce_amount = Number(0);
             var so_hk_amount = so_data.hk_sum_amount;//销售到款净金额
             var so_total_zmount = so_data.total;//销售订单总额
@@ -119,7 +120,6 @@ define(
                         var inv_id = createFyInvoice(so_data,so_id,ce_amount,so_inv_id);
                         log.debug('差额为空 fy inv_id',inv_id);
                         if(inv_id){
-                            submitFyidToSoinv(inv_id,so_inv_id);
                             // inv_arr.push(inv_id);
                             //先通过搜索找到销售订单下的所有未核销发票
                             var cd_search = search.load('customsearch_customer_deposit');//客户存款单未核销
@@ -135,6 +135,8 @@ define(
                                         log.debug('存款应用程序id',ret);
                                     }
                                 }
+                                //提交费用发票到销售发票
+                                submitFyidToSoinv(inv_id,so_inv_id);
                             }
                         }
                     }
@@ -147,8 +149,6 @@ define(
                     var inv_id = createFyInvoice(so_data,so_id,ce_amount,so_inv_id);
                     log.debug('作为效益 fy inv_id',inv_id);
                     if(inv_id){
-                        //提交费用发票到销售发票
-                        submitFyidToSoinv(inv_id,so_inv_id);
                         // inv_arr.push(inv_id);
                         //先通过搜索找到销售订单下的所有未核销发票
                         var cd_search = search.load('customsearch_customer_deposit');//客户存款单未核销
@@ -165,12 +165,14 @@ define(
                                 }
                             }
                         }
+                        //提交费用发票到销售发票
+                        submitFyidToSoinv(inv_id,so_inv_id);
                     }
                 }
             }
         }
         function submitFyidToSoinv(fyId,so_inv_id){
-            record.submitField({
+            record.submitFields({
                 type:'invoice',
                 id:so_inv_id,
                 values:{
@@ -179,6 +181,7 @@ define(
             })
         }
         function createFyInvoice(so_data,so_id,ce_amount,so_inv_id) {
+            log.debug('销售发票id',so_inv_id);
             var inv_rec = record.create({
                 type:'invoice',
                 isDynamic:true,
