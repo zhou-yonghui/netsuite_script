@@ -288,4 +288,4 @@
             reduce: reduce,
             summarize: summarize
         };
-    });
+    }); 
