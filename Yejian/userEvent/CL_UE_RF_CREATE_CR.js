@@ -224,8 +224,8 @@
      }
      function createGhRec(recTk,refund_date,pay_type,dk_currency,dk_refund_amount,dk_jmy,rate,dk_id,dk_rec,rf_amount){
          try{
-             var zf_cny_rate = getCurrencyNsRate(recTk,2,1);//支付币种汇率（本位币）
-             var gj_cny_rate = getCurrencyNsRate(recTk,dk_currency,1);//购进币种汇率（本位币）
+             var zf_cny_rate = getCurrencyNsRate(recTk,dk_currency,1);//支付币种汇率（本位币）
+             var gj_cny_rate = getCurrencyNsRate(recTk,2,1);//购进币种汇率（本位币）
              var jz_rate;
              if(dk_currency != 2 && dk_currency != 1){
                  jz_rate = Number(zf_cny_rate)/Number(gj_cny_rate);
@@ -257,7 +257,7 @@
             //  }
              else if(dk_currency != 1){//支付币种与购进币种都和本位币不一致
                  rec.setValue('custrecord_hg_bank_transfer_type',1);//类型
-                 rec.setValue('custrecord_hg_bank_transfer_amount_hs',(Number(dk_jmy * gj_cny_rate)/Number(zf_cny_rate)).toFixed(2));//换算本位币金额
+                 rec.setValue('custrecord_hg_bank_transfer_amount_hs',(Number(rf_amount)/Number(gj_cny_rate)).toFixed(2));//换算本位币金额
              }
              if(jz_rate != 'null'){
                  rec.setValue('custrecord_hg_bank_transfer_jz_rate',(jz_rate).toFixed(4));//记账汇率
