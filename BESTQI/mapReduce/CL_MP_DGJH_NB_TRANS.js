@@ -5,7 +5,7 @@
  * @NApiVersion 2.x
  * @NScriptType MapReduceScript
  */
-define(
+ define(
     ['N/search', 'N/record', 'N/task','N/file','N/currency','N/format','N/runtime'],
     function(search, record, task,file,exchangeRate,format,runtime) {
         function getInputData() {
@@ -55,6 +55,7 @@ define(
                 // var it_id_one;
                 // var it_id_two;
                 var do_save = 'N';
+                var line_no = Number(0);
                 var wb_po_arr = new Array();//用来收集所有行的外部po数据
                 var document_status = dg_rec.getValue('custrecord_document_status');//单据状态，已发运：2,已完结 ：6,部分发运 ： 11
                 var signing_time = dg_rec.getValue('custrecord_signing_time');//签收时间,
@@ -62,7 +63,8 @@ define(
                     var dg_count = dg_rec.getLineCount('recmachcustrecord_sl_rp_body');
                     log.debug("订柜计划明细行条数",dg_count);
                     for(var i = 0;i < dg_count;i++){
-                        log.debug('现在是第' + i + '行');
+                        line_no += Number(1);
+                        log.debug('现在是第' + line_no + '行');
                         // var save_flag = "F";
                         // var signing_time_flag = 'N';
                         var po_arr = new Array();
@@ -138,7 +140,7 @@ define(
                         });
                         var dgjh_detail_id = dg_rec.getCurrentSublistValue({
                             sublistId:'recmachcustrecord_sl_rp_body',
-                            fieldId:'id',        //订柜计划明细id
+                            fieldId:'internalid',        //订柜计划明细id
                         });
                         var wb_po_ir = dg_rec.getCurrentSublistValue({
                             sublistId:'recmachcustrecord_sl_rp_body',
@@ -216,12 +218,19 @@ define(
                             sublistId:'recmachcustrecord_sl_rp_body',
                             fieldId:'custrecord_sl_document_status1',     //发运状态
                         });
+                        var ex_fac_date = dg_rec.getCurrentSublistValue({
+                            sublistId:'recmachcustrecord_sl_rp_body',
+                            fieldId:'custrecord_hl_bsq_fac_date',     //EX-FAC DATE
+                        });
                         var ship_diff = Number(actual_qty) - Number(cumulative_shipment_quantity);
+                        log.debug('订柜计划明细id ex_fac_date',dgjh_detail_id + '---' + ex_fac_date);
                         //首先判断出货计划类型
                         var shipment_type_flag = checkShipmentType(shipment_item_type_t);
                         log.debug('出货计划类型flag init',shipment_type_flag);
-                        if(shipment_type_flag == 'outsea' && ship_type_status != 2 && Number(actual_shipment_quantity) <= Number(actual_qty) - Number(cumulative_shipment_quantity)){
+                        log.debug('实际发货 qty实际 累计发货',actual_shipment_quantity + '---' + actual_qty + '---' + cumulative_shipment_quantity);
+                        if(shipment_type_flag == 'outsea' && Number(actual_shipment_quantity) <= Number(actual_qty) - Number(cumulative_shipment_quantity)){
                             save_flag = 'F';
+                            log.debug('outsea button ns_type',button_flag + '---' + ns_type);
                             if(button_flag == 2 || button_flag == 4 || button_flag == 5){
                                 //发货，创建内部交易po
                                 if(actual_shipment_quantity > 0 && ns_type != 4){
@@ -229,14 +238,18 @@ define(
                                     log.debug("一级内部PO",one_nb_po + ',length:' + one_nb_po.length);
                                     log.debug('二级内部PO',two_nb_po + ',length:' + two_nb_po.length);
                                     //创建内部po关联单据
-                                    save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                                    save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                                     save_flag_arr.push(save_flag);
                                 }
                                 //发货，生成内部to单
                                 else if(actual_shipment_quantity > 0 && ns_type == 4){
                                     log.debug('创建内部to关联单据');
-                                    //创建内部to关联单据
-                                    save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_shipment_quantity,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id);
+                                    if(ex_fac_date){
+                                        //创建内部to关联单据
+                                        save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_shipment_quantity,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id,ex_fac_date);
+                                    }else {
+                                        save_flag = 'N';
+                                    }
                                     // //赋值第一次收货时间
                                     // if(save_flag == 'Y' && !ir_one_date){
                                     //     dg_rec.setCurrentSublistValue({
@@ -259,13 +272,19 @@ define(
                                 if(shipment_type_flag == 'gnout' && ship_type_status != 2){
                                     if(button_flag == 2 || button_flag == 5){
                                         if(actual_qty > 0 && ns_type != 4 && one_nb_po.length == 0){
+                                            log.debug('gnout qty po',actual_qty);
                                             //创建内部po关联单据
-                                            save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                                            save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                                             save_flag_arr.push(save_flag);
                                         }
                                         else if(actual_qty > 0 && ns_type == 4 && nb_to.length == 0){
-                                            //创建内部to关联单据
-                                            save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_qty,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id);
+                                            if(ex_fac_date){
+                                                log.debug('gnout qty to',actual_qty);
+                                                //创建内部to关联单据
+                                                save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_qty,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id,ex_fac_date);
+                                            }else {
+                                                save_flag = 'N';
+                                            }
                                             //赋值第一次收货时间
                                             // if(save_flag == 'Y' && !ir_one_date){
                                             //     dg_rec.setCurrentSublistValue({
@@ -281,103 +300,166 @@ define(
                                 //有po单，供应商直发FBA和供应商发海外
                                 else if(shipment_type_flag == 'vendor' && po_id && ship_type_status != 2){ //不能为已发运
                                     log.debug('vendor button',button_flag);
-                                    actual_qty = zj_qty;//TODO:供应商类型，外部采购收货、发运用质检数量
-                                    log.debug('质检数量',actual_qty);
+                                    // actual_qty = zj_qty;//TODO:供应商类型，外部采购收货、发运用质检数量
+                                    // log.debug('质检数量',actual_qty);
+                                    var createNbPoTo_flag = 'N';
                                     if(wb_po_ir.length == 0 && wb_po_vb.length == 0){
                                         if(button_flag == 1 || (button_flag == 2 && is_wb_po == false)){
-                                            //外部po收货
-                                            var do_po_data = wbPoToiriv(po_id,actual_qty,wb_po_arr,sku,line_key);
-                                            log.debug('外部po自动收货开单数据',do_po_data);
-                                            if(do_po_data.ir_error != 'n' && do_po_data.vb_error != "n"){
-                                                dg_rec.setCurrentSublistValue({
-                                                    sublistId:'recmachcustrecord_sl_rp_body',
-                                                    fieldId:'custrecord_receiving_error',        //采购收货报错
-                                                    value:'外部po生成收货单报错：' + do_po_data.ir_error,
-                                                });
-                                                dg_rec.setCurrentSublistValue({
-                                                    sublistId:'recmachcustrecord_sl_rp_body',
-                                                    fieldId:'custrecord_statement_error',        //采购账单报错
-                                                    value:'外部po生成帐单报错：' + do_po_data.vb_error,
-                                                });
-                                                wb_po_flag = do_po_data.ir_error + '；' +do_po_data.vb_error;
-                                                save_flag = 'Y';
-                                                save_flag_arr.push(save_flag);
-                                            }
-                                            else{
-                                                if(do_po_data.ir_id){
-                                                    dg_rec.setCurrentSublistValue({
-                                                        sublistId:'recmachcustrecord_sl_rp_body',
-                                                        fieldId:'custrecord_sl_dg_po_inbound',        //采购收货单
-                                                        value:do_po_data.ir_id,
-                                                    });
-                                                    dg_rec.setCurrentSublistValue({
-                                                        sublistId:'recmachcustrecord_sl_rp_body',
-                                                        fieldId:'custrecord_receiving_error',        //采购收货报错
-                                                        value:'',
-                                                    });
-                                                    dg_rec.setCurrentSublistValue({
-                                                        sublistId:'recmachcustrecord_sl_rp_body',
-                                                        fieldId:'custrecord_sl_purchase_receipt',        //外部采购收货勾选
-                                                        value:true,
-                                                    });
-                                                    save_flag = 'Y';
-                                                    wb_po_obj.ir_id = do_po_data.ir_id;
-                                                    save_flag_arr.push(save_flag);
-                                                }
-                                                if(do_po_data.vendorbill_Id){
-                                                    dg_rec.setCurrentSublistValue({
-                                                        sublistId:'recmachcustrecord_sl_rp_body',
-                                                        fieldId:'custrecord_purchase_bill',        //采购账单
-                                                        value:do_po_data.vendorbill_Id,
-                                                    });
-                                                    dg_rec.setCurrentSublistValue({
-                                                        sublistId:'recmachcustrecord_sl_rp_body',
-                                                        fieldId:'custrecord_statement_error',        //采购账单报错
-                                                        value:'',
-                                                    });
-                                                    wb_po_obj.vb_id = do_po_data.vendorbill_Id;
-                                                    save_flag = 'Y';
-                                                    save_flag_arr.push(save_flag);
-                                                }
-                                                if(do_po_data.ir_error != 'n'){
+                                            if(ex_fac_date){
+                                                //外部po收货
+                                                var do_po_data = wbPoToiriv(po_id,actual_qty,wb_po_arr,sku,line_key,ex_fac_date);
+                                                log.debug('外部po自动收货开单数据',do_po_data);
+                                                if(do_po_data.ir_error != 'n' && do_po_data.vb_error != "n"){
                                                     dg_rec.setCurrentSublistValue({
                                                         sublistId:'recmachcustrecord_sl_rp_body',
                                                         fieldId:'custrecord_receiving_error',        //采购收货报错
                                                         value:'外部po生成收货单报错：' + do_po_data.ir_error,
                                                     });
-                                                    wb_po_flag = do_po_data.ir_error;
-                                                    save_flag = 'Y';
-                                                    save_flag_arr.push(save_flag);
-                                                }
-                                                if(do_po_data.vb_error != 'n'){
                                                     dg_rec.setCurrentSublistValue({
                                                         sublistId:'recmachcustrecord_sl_rp_body',
                                                         fieldId:'custrecord_statement_error',        //采购账单报错
                                                         value:'外部po生成帐单报错：' + do_po_data.vb_error,
                                                     });
-                                                    wb_po_flag = do_po_data.vb_error;
+                                                    wb_po_flag = do_po_data.ir_error + '；' +do_po_data.vb_error;
+                                                    // save_flag = 'Y';
+                                                    // save_flag_arr.push(save_flag);
+                                                    // createNbPo_flag = 'Y';
+                                                }
+                                                else if(do_po_data.ir_id && do_po_data.vendorbill_Id){
+                                                    if(do_po_data.ir_id){
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_sl_dg_po_inbound',        //采购收货单
+                                                            value:do_po_data.ir_id,
+                                                        });
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_receiving_error',        //采购收货报错
+                                                            value:'',
+                                                        });
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_sl_purchase_receipt',        //外部采购收货勾选
+                                                            value:true,
+                                                        });
+                                                        wb_po_obj.ir_id = do_po_data.ir_id;
+                                                    }
+                                                    if(do_po_data.vendorbill_Id){
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_purchase_bill',        //采购账单
+                                                            value:do_po_data.vendorbill_Id,
+                                                        });
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_statement_error',        //采购账单报错
+                                                            value:'',
+                                                        });
+                                                        wb_po_obj.vb_id = do_po_data.vendorbill_Id;
+                                                    }
                                                     save_flag = 'Y';
                                                     save_flag_arr.push(save_flag);
+                                                    createNbPoTo_flag = 'Y';
                                                 }
-                                                if(do_po_data.ir_id || do_po_data.vendorbill_Id){
-                                                    wb_po_obj.wb_po = po_id;
-                                                    wb_po_arr.push(wb_po_obj);
+                                                else{
+                                                    if(do_po_data.ir_id){
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_sl_dg_po_inbound',        //采购收货单
+                                                            value:do_po_data.ir_id,
+                                                        });
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_receiving_error',        //采购收货报错
+                                                            value:'',
+                                                        });
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_sl_purchase_receipt',        //外部采购收货勾选
+                                                            value:true,
+                                                        });
+                                                        // save_flag = 'Y';
+                                                        wb_po_obj.ir_id = do_po_data.ir_id;
+                                                        // save_flag_arr.push(save_flag);
+                                                    }
+                                                    if(do_po_data.vendorbill_Id){
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_purchase_bill',        //采购账单
+                                                            value:do_po_data.vendorbill_Id,
+                                                        });
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_statement_error',        //采购账单报错
+                                                            value:'',
+                                                        });
+                                                        wb_po_obj.vb_id = do_po_data.vendorbill_Id;
+                                                        // save_flag = 'Y';
+                                                        // save_flag_arr.push(save_flag);
+                                                    }
+                                                    if(do_po_data.ir_error != 'n'){
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_receiving_error',        //采购收货报错
+                                                            value:'外部po生成收货单报错：' + do_po_data.ir_error,
+                                                        });
+                                                        wb_po_flag = do_po_data.ir_error;
+                                                        // save_flag = 'Y';
+                                                        // save_flag_arr.push(save_flag);
+                                                    }
+                                                    if(do_po_data.vb_error != 'n'){
+                                                        dg_rec.setCurrentSublistValue({
+                                                            sublistId:'recmachcustrecord_sl_rp_body',
+                                                            fieldId:'custrecord_statement_error',        //采购账单报错
+                                                            value:'外部po生成帐单报错：' + do_po_data.vb_error,
+                                                        });
+                                                        wb_po_flag = do_po_data.vb_error;
+                                                        // save_flag = 'Y';
+                                                        // save_flag_arr.push(save_flag);
+                                                    }
+                                                    if(do_po_data.ir_id || do_po_data.vendorbill_Id){
+                                                        wb_po_obj.wb_po = po_id;
+                                                        wb_po_arr.push(wb_po_obj);
+                                                    }
                                                 }
+                                            }else {
+                                                dg_rec.setCurrentSublistValue({
+                                                    sublistId:'recmachcustrecord_sl_rp_body',
+                                                    fieldId:'custrecord_receiving_error',        //采购收货报错
+                                                    value:'外部po生成收货单报错：EX-FAC DATE 字段为空',
+                                                });
+                                                save_flag = 'N';
+                                                save_flag_arr.push(save_flag);
+                                                createNbPoTo_flag = 'N';
                                             }
                                             //业务处理类型为：供应商直发FBA、供应商直发海外仓时
-                                            log.debug('出货计划类型flag',shipment_type_flag);
-                                            if(shipment_type_flag == 'vendor'){
+                                            log.debug('出货计划类型flag 外部po创建内部po ex_fac_date',shipment_type_flag + '---' + createNbPoTo_flag + '---' + ex_fac_date);
+                                            if(shipment_type_flag == 'vendor' && createNbPoTo_flag == 'Y'){
                                                 if(button_flag == 2 || button_flag == 5){
-                                                    save_flag = 'F';
+                                                    // save_flag = 'F';
                                                     if(actual_qty > 0 && ns_type != 4){
                                                         //创建内部po关联单据
-                                                        save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
-                                                        save_flag_arr.push(save_flag);
+                                                        // save_flag =
+                                                        var to_sucess_falg_po = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
+                                                        if(to_sucess_falg_po != 'Y'){
+                                                            save_flag_arr.pop();
+                                                            save_flag_arr.push('N');
+                                                        }
+                                                        // save_flag_arr.push(save_flag);
                                                     }
                                                     else if(actual_qty > 0 && ns_type == 4){
                                                         //创建内部to关联单据
-                                                        save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_qty,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id);
-                                                        save_flag_arr.push(save_flag);
+                                                        if(ex_fac_date){
+                                                            var to_sucess_falg_to = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_qty,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id,ex_fac_date);
+                                                            if(to_sucess_falg_to != 'Y'){
+                                                                save_flag_arr.pop();//TODO:删除数组最后一位
+                                                                save_flag_arr.push('N');
+                                                            }
+                                                        }else {
+                                                            save_flag_arr.pop();//TODO:删除数组最后一位
+                                                            save_flag_arr.push('N');
+                                                        }
+                                                        // save_flag_arr.push(save_flag);
                                                     }
                                                 }
                                             }
@@ -391,13 +473,18 @@ define(
                                                 save_flag = 'F';
                                                 if(actual_qty > 0 && ns_type != 4){
                                                     //创建内部po关联单据
-                                                    save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                                                    save_flag = createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                                                     save_flag_arr.push(save_flag);
                                                 }
                                                 else if(actual_qty > 0 && ns_type == 4){
-                                                    //创建内部to关联单据
-                                                    save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_qty,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id);
-                                                    save_flag_arr.push(save_flag);
+                                                    if(ex_fac_date){
+                                                        //创建内部to关联单据
+                                                        save_flag = createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_qty,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id,ex_fac_date);
+                                                        save_flag_arr.push(save_flag);
+                                                    }else {
+                                                        save_flag = 'N';
+                                                        save_flag_arr.push(save_flag);
+                                                    }
                                                 }
                                             }
                                         }
@@ -413,7 +500,7 @@ define(
                                 log.debug('二级内部it',two_nb_it + ',length:' + two_nb_it.length);
                                 log.debug('to的it',three_nb_it + ',length:' + three_nb_it.length);
                                 //生成内部IT关联单据
-                                var save_data = createNbIt(dg_rec,save_flag,ns_type,it_one_flag,it_id_to,it_arr_to,it_arr_t,cumulative_quantity_received,three_nb_it,it_two_flag,two_nb_it,del_it_arr_two,del_it_arr_one,one_nb_it,it_arr,it_id_one,start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,it_to_flag);
+                                var save_data = createNbIt(dg_rec,save_flag,ns_type,it_one_flag,it_id_to,it_arr_to,it_arr_t,cumulative_quantity_received,three_nb_it,it_two_flag,two_nb_it,del_it_arr_two,del_it_arr_one,one_nb_it,it_arr,it_id_one,start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,it_to_flag,ex_fac_date);
                                 log.debug('it save_data',save_data);
                                 signing_time_flag = save_data.signing_time_flag;
                                 save_flag = save_data.save_flag;
@@ -429,7 +516,7 @@ define(
                             sublistId:'recmachcustrecord_sl_rp_body',
                             fieldId:'custrecord_cumulative_shipment_quantity',//发货累计数量
                         });
-                        log.debug('save_flag actual_qty',save_flag + actual_qty);
+                        log.debug('save_flag actual_qty cumulative_quantity_received',save_flag + actual_qty + '---' + cumulative_quantity_received + '---' + cumulative_shipment_quantity);
                         //提交行数据
                         if(save_flag == "Y"){
                             /**发货累计数量=多次实际发货数量累加数值
@@ -446,11 +533,11 @@ define(
                                 log.debug('cumulative_quantity_received',cumulative_quantity_received);
                                 log.debug('tag_status_t',tag_status_t);
                                 // if(tag_status_t == 'CLOSED'){
-                                    dg_rec.setCurrentSublistValue({
-                                        sublistId:'recmachcustrecord_sl_rp_body',
-                                        fieldId:'custrecord_variance_quantity',        //差异数量
-                                        value:Number(actual_qty) - Number(cumulative_quantity_received),
-                                    });
+                                dg_rec.setCurrentSublistValue({
+                                    sublistId:'recmachcustrecord_sl_rp_body',
+                                    fieldId:'custrecord_variance_quantity',        //差异数量
+                                    value:Number(actual_qty) - Number(cumulative_quantity_received),
+                                });
                                 // }
                                 dg_rec.setCurrentSublistValue({
                                     sublistId:'recmachcustrecord_sl_rp_body',
@@ -486,15 +573,15 @@ define(
                                     }
                                 }
                                 else if(shipment_type_flag == 'vendor'){
-                                    if(zj_qty){
-                                        if(zj_qty > cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
+                                    if(actual_qty){
+                                        if(actual_qty > cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
                                             dg_rec.setCurrentSublistValue({
                                                 sublistId:'recmachcustrecord_sl_rp_body',
                                                 fieldId:'custrecord_sl_document_status1',        //发运状态
                                                 value:11,                         //部分发运
                                             });
                                         }
-                                        else if(zj_qty == cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
+                                        else if(actual_qty == cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
                                             dg_rec.setCurrentSublistValue({
                                                 sublistId:'recmachcustrecord_sl_rp_body',
                                                 fieldId:'custrecord_sl_document_status1',        //发运状态
@@ -538,11 +625,22 @@ define(
                         }
                     }
                     log.debug('save_flag_arr',save_flag_arr);
+                    var save_flag_sum = Number(0);
+                    var save_all_flag = 'Y';
                     for(var p = 0;p < save_flag_arr.length;p++){
                         if(save_flag_arr[p] == 'Y'){
                             do_save = 'Y';
+                            save_flag_sum += Number(1);
                         }
                     }
+                    if(save_flag_sum == 0){
+                        save_all_flag = 'N_1';
+                    }else {
+                        if(save_flag_sum != Number(dg_count)){
+                            save_all_flag = 'N_2';
+                        }
+                    }
+                    log.debug('save_all_flag',save_all_flag);
                     log.debug('do_save',do_save);
                     if(do_save == 'Y'){
                         // log.debug('it_one_flag',it_one_flag);
@@ -593,11 +691,23 @@ define(
                         }
                         if(button_flag == 2){
                             log.debug('更改单据状态已发运,bu_flag 2');
-                            dg_rec.setValue('custrecord_document_status',2);//单据状态,已发运 2
+                            if(save_all_flag == 'Y'){
+                                log.debug('已发运');
+                                // dg_rec.setValue('custrecord_document_status',2);//单据状态,已发运 2
+                            }else if(save_all_flag == 'N_2'){
+                                log.debug('部分发运');
+                                // dg_rec.setValue('custrecord_document_status',11);//单据状态,部分发运 11
+                            }
                         }
                         else if(button_flag == 4 && shipment_type_flag == 'outsea') {
                             log.debug('更改单据状态已发运,bu_flag 4');
-                            dg_rec.setValue('custrecord_document_status',2);//单据状态,已发运 2
+                            if(save_all_flag == 'Y'){
+                                log.debug('已发运');
+                                // dg_rec.setValue('custrecord_document_status',2);//单据状态,已发运 2
+                            }else if(save_all_flag == 'N_2'){
+                                log.debug('部分发运');
+                                // dg_rec.setValue('custrecord_document_status',11);//单据状态,部分发运 11
+                            }
                         }
                         else if(button_flag == 5){
                             log.debug('入库/出库回写 button_flag 5');
@@ -662,7 +772,7 @@ define(
                 });
             }
         }
-        function createNbIt(dg_rec,save_flag,ns_type,it_one_flag,it_id_to,it_arr_to,it_arr_t,cumulative_quantity_received,three_nb_it,it_two_flag,two_nb_it,del_it_arr_two,del_it_arr_one,one_nb_it,it_arr,it_id_one,start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,it_to_flag) {
+        function createNbIt(dg_rec,save_flag,ns_type,it_one_flag,it_id_to,it_arr_to,it_arr_t,cumulative_quantity_received,three_nb_it,it_two_flag,two_nb_it,del_it_arr_two,del_it_arr_one,one_nb_it,it_arr,it_id_one,start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,it_to_flag,ex_fac_date) {
             var shouhuo_flag = 'N';
             var signing_time_flag = 'N';
             /***--------------------------一级it单 ----------------------------------*/
@@ -670,7 +780,7 @@ define(
                 if(one_nb_it.length > 0){
                     it_arr = arrayAdd(one_nb_it,it_arr);
                     try{
-                        it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE');
+                        it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE',ex_fac_date);
                     }catch(e){
                         log.debug('生成一级it出错',e);
                         it_one_flag = e.message;
@@ -684,7 +794,7 @@ define(
                 }
                 else {
                     try{
-                        it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE');
+                        it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE',ex_fac_date);
                     }catch(e){
                         log.debug('生成一级it出错',e);
                         it_one_flag = e.message;
@@ -703,7 +813,7 @@ define(
                     if(one_nb_it.length > 0){
                         it_arr = arrayAdd(one_nb_it,it_arr);
                         try{
-                            it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO1');
+                            it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO1',ex_fac_date);
                         }catch(e){
                             log.debug('生成一级it出错',e);
                             it_one_flag = e.message;
@@ -718,7 +828,7 @@ define(
                     if(two_nb_it.length > 0){
                         it_arr_t = arrayAdd(two_nb_it,it_arr_t);
                         try{
-                            it_id_two = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO2');
+                            it_id_two = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO2',ex_fac_date);
                         }catch(e){
                             log.debug('生成二级it出错',e);
                             it_two_flag = e.message;
@@ -733,7 +843,7 @@ define(
                 }else {
                     try{
                         //中转it
-                        it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO1');
+                        it_id_one = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO1',ex_fac_date);
                     }catch(e){
                         log.debug('生成一级it出错',e);
                         it_one_flag = e.message;
@@ -745,7 +855,7 @@ define(
                         del_it_arr_one.push(it_id_one);//TODO:用作异常删除数组
                         try{
                             //目的it
-                            it_id_two = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO2');
+                            it_id_two = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'TWO2',ex_fac_date);
                         }catch(e){
                             log.debug('生成二级it出错',e);
                             it_two_flag = e.message;
@@ -762,7 +872,7 @@ define(
                 if(three_nb_it.length > 0){
                     it_arr_to = arrayAdd(three_nb_it,it_arr_to);
                     try{
-                        it_id_to = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE');
+                        it_id_to = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE',ex_fac_date);
                     }catch(e){
                         log.debug('生成TO的it出错',e);
                         it_two_flag = e.message;
@@ -776,7 +886,7 @@ define(
                 }
                 else {
                     try{
-                        it_id_to = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE');
+                        it_id_to = createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgId,'ONE',ex_fac_date);
                     }catch(e){
                         log.debug('生成TO的it出错',e);
                         it_two_flag = e.message;
@@ -920,7 +1030,12 @@ define(
             }
             return {"save_flag":save_flag,"signing_time_flag":signing_time_flag};
         }
-        function createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two) {
+        function createNbPo(dg_rec,save_flag,ns_type,one_nb_po,po_arr,nb_po_id,del_po_arr_one,two_nb_po,nb_po_id_one,po_arr_t,del_po_arr_two,nb_po_id_two,cumulative_shipment_quantity,actual_shipment_quantity,actual_qty,po_id,start_location,on_location,end_location,sku,shipment_item_type_t,dgjh_detail_id,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date){
+            save_flag = 'F';
+            if(shipment_type_flag != 'outsea'){
+                actual_shipment_quantity = actual_qty;
+            }
+            log.debug('内部po 发货数量',actual_shipment_quantity);
             /**_---------------------一级内部交易po----------------------------**/
             if(ns_type == 1){
                 if(one_nb_po.length > 0){
@@ -928,7 +1043,9 @@ define(
                     po_arr = arrayAdd(one_nb_po,po_arr);
                     //判断生成单据信息是否有错误，有错才重新生成内部po
                     // if(dg_rec.getValue("custrecord_cl_error_message") == 'create po error'){
-                    nb_po_id = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"ONE",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                    // actual_shipment_quantity = actual_qty;
+                    // log.debug('内部po 发货数量',actual_shipment_quantity);
+                    nb_po_id = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"ONE",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                     if(nb_po_id){
                         po_arr.push(nb_po_id);
 
@@ -939,9 +1056,8 @@ define(
                     }
                     // }
                 }else{
-                    // log.debug("一级交易起始仓",start_location);
                     //生成内部采购
-                    nb_po_id = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"ONE",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                    nb_po_id = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"ONE",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                     if(nb_po_id){
                         po_arr.push(nb_po_id);
 
@@ -958,7 +1074,7 @@ define(
                     if(one_nb_po.length > 0){
                         po_arr = arrayAdd(one_nb_po,po_arr);
                         //中转po
-                        nb_po_id_one = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO1",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                        nb_po_id_one = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO1",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                         if(nb_po_id_one){
                             po_arr.push(nb_po_id_one);
 
@@ -971,7 +1087,7 @@ define(
                     if(two_nb_po.length > 0){
                         po_arr_t = arrayAdd(two_nb_po,po_arr_t);
                         //目的po
-                        nb_po_id_two = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO2",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                        nb_po_id_two = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO2",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                         if(nb_po_id_two){
                             po_arr_t.push(nb_po_id_two);
 
@@ -984,9 +1100,9 @@ define(
                 }
                 else{
                     //中转po
-                    nb_po_id_one = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO1",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                    nb_po_id_one = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO1",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                     //目的po
-                    nb_po_id_two = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO2",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two);
+                    nb_po_id_two = createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,"TWO2",nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date);
                     if(nb_po_id_one){
                         po_arr.push(nb_po_id_one);
 
@@ -1005,7 +1121,7 @@ define(
                     }
                 }
             }
-            // log.debug("新建内部采购id",nb_po_id);
+            log.debug("内部采购集合po_arr po_arr_t",po_arr + '---' + po_arr_t);
             //回写订柜计划,实际发货数量清零
             if(po_arr.length > 0){
                 log.debug("一级po合集",po_arr);
@@ -1035,8 +1151,10 @@ define(
                 });
                 save_flag = "Y";
             }
+            log.debug('内部po',save_flag);
             //发货累计
             if(save_flag == 'Y'){
+                log.debug('实际发货 累计发货',actual_shipment_quantity + '---' +  cumulative_shipment_quantity);
                 if(cumulative_shipment_quantity){
                     dg_rec.setCurrentSublistValue({
                         sublistId:'recmachcustrecord_sl_rp_body',
@@ -1080,13 +1198,13 @@ define(
                 }
             }
         }
-        function createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_shipment_quantity,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id) {
+        function createNbTo(ns_type,dg_rec,nb_to,to_arr,nb_to_id,shipment_item_type_t,actual_shipment_quantity,cumulative_shipment_quantity,start_location,end_location,sku,to_flag,save_flag,dgjh_detail_id,ex_fac_date) {
             var ifir_flag = 'N';
             if(ns_type == 4){
                 if(nb_to.length > 0){
                     to_arr = arrayAdd(nb_to,to_arr);
                     try{
-                        nb_to_id = createTo(shipment_item_type_t,actual_shipment_quantity,start_location,end_location,sku,dgjh_detail_id);
+                        nb_to_id = createTo(shipment_item_type_t,actual_shipment_quantity,start_location,end_location,sku,dgjh_detail_id,ex_fac_date);
                     }catch(e){
                         log.debug('生成公司间TO出错',e);
                         to_flag = e.message;
@@ -1094,12 +1212,12 @@ define(
                     if(nb_to_id != 0){
                         to_arr.push(nb_to_id);
                         //to自动收发货
-                        ifir_flag = toTransferIrIF(nb_to_id,actual_shipment_quantity,sku,start_location);
+                        ifir_flag = toTransferIrIF(nb_to_id,actual_shipment_quantity,sku,start_location,ex_fac_date);
                     }
                 }
                 else{
                     try{
-                        nb_to_id = createTo(shipment_item_type_t,actual_shipment_quantity,start_location,end_location,sku,dgjh_detail_id);
+                        nb_to_id = createTo(shipment_item_type_t,actual_shipment_quantity,start_location,end_location,sku,dgjh_detail_id,ex_fac_date);
                     }catch(e){
                         log.debug('生成公司间TO出错',e);
                         to_flag = e.message;
@@ -1107,7 +1225,7 @@ define(
                     if(nb_to_id != 0){
                         to_arr.push(nb_to_id);
                         //to自动收发货
-                        ifir_flag = toTransferIrIF(nb_to_id,actual_shipment_quantity,sku,start_location);
+                        ifir_flag = toTransferIrIF(nb_to_id,actual_shipment_quantity,sku,start_location,ex_fac_date);
                     }
                 }
                 if(to_arr.length > 0){
@@ -1151,14 +1269,15 @@ define(
                                 value:Number(actual_shipment_quantity),
                             });
                         }
+                        save_flag = 'Y';
                     }else{
                         dg_rec.setCurrentSublistValue({
                             sublistId:'recmachcustrecord_sl_rp_body',
                             fieldId:'custrecord_error',        //公司间交易报错
                             value:'公司间TO报错：' + to_flag
                         });
+                        save_flag = 'N';
                     }
-                    save_flag = 'Y';
                 }
                 else{
                     dg_rec.setCurrentSublistValue({
@@ -1166,7 +1285,7 @@ define(
                         fieldId:'custrecord_error',        //公司间交易报错
                         value:'公司间TO报错：' + to_flag
                     });
-                    save_flag = 'Y';
+                    save_flag = 'N';
                 }
             }
             log.debug('to save_flag',save_flag);
@@ -1195,7 +1314,7 @@ define(
             }
             return flag;
         }
-        function wbPoToiriv(po_id,actual_qty,wb_po_arr,line_sku,line_key) {
+        function wbPoToiriv(po_id,actual_qty,wb_po_arr,line_sku,line_key,ex_fac_date) {
             var do_flag = 'Y';
             var ir_Id;
             var vendorbill_Id;
@@ -1204,18 +1323,18 @@ define(
             log.debug('外部po生成单据的数量',actual_qty);
             if(po_id){
                 //首先判断是否有相同的外部po已经收货
-                log.debug('wb_po_arr',wb_po_arr);
-                if(wb_po_arr.length > 0){
-                    for(var p = 0;p < wb_po_arr.length;p++){
-                        if(po_id == wb_po_arr[p].wb_po) {
-                            ir_Id = wb_po_arr[p].ir_id
-                            vendorbill_Id = wb_po_arr[p].vb_id;
-                            do_flag = 'N';
-                            break;
-                        }
-                    }
-                }
-                log.debug('do_flag',do_flag);
+                // log.debug('wb_po_arr',wb_po_arr);
+                // if(wb_po_arr.length > 0){
+                //     for(var p = 0;p < wb_po_arr.length;p++){
+                //         if(po_id == wb_po_arr[p].wb_po) {
+                //             ir_Id = wb_po_arr[p].ir_id
+                //             vendorbill_Id = wb_po_arr[p].vb_id;
+                //             do_flag = 'N';
+                //             break;
+                //         }
+                //     }
+                // }
+                // log.debug('do_flag',do_flag);
                 do_flag = 'Y';
                 if(do_flag == 'Y'){
                     //收货开账单
@@ -1230,6 +1349,7 @@ define(
                                 toType: 'itemreceipt',
                                 isDynamic: true
                             });
+                            ir_Rec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
                             var ir_count = ir_Rec.getLineCount('item');
                             log.debug('ir_count',ir_count);
                             var ir_diff_qty = Number(0);
@@ -1255,6 +1375,7 @@ define(
                                         fieldId:'itemreceive',
                                     });
                                     if(ir_diff_qty == 0 && ir_commit_flag == 'Y'){
+                                        log.debug('first qty actual_qty',qty + '---' + actual_qty);
                                         if(qty >= actual_qty){
                                             ir_Rec.setCurrentSublistValue({            //TODO：部分收货，部分发货只需要赋值数量字段就可以，但是发货需要系统设置一下
                                                 sublistId:'item',
@@ -1325,7 +1446,7 @@ define(
                                 //账单
                                 var vendorbill_Rec = record.transform({fromType:'purchaseorder',fromId:po_id,toType:'vendorbill',isDynamic: true});
                                 vendorbill_Rec.setValue('approvalstatus',2);//已核准
-                                // vendorbill_Rec.setValue({fieldId:'trandate',value:changeDate(trandate)});
+                                vendorbill_Rec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
                                 var vb_count = vendorbill_Rec.getLineCount('item');
                                 for(var j = 0;j < vb_count;j++){
                                     vendorbill_Rec.selectLine('item',j);
@@ -1415,7 +1536,7 @@ define(
                             //账单
                             var vendorbill_Rec2 = record.transform({fromType:'purchaseorder',fromId:po_id,toType:'vendorbill',isDynamic: true});
                             vendorbill_Rec2.setValue('approvalstatus',2);//已核准
-                            // vendorbill_Rec2.setValue({fieldId:'trandate',value:changeDate(trandate)});
+                            vendorbill_Rec2.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
                             var vb_count2 = vendorbill_Rec2.getLineCount('item');
                             for(var j2 = 0;j2 < vb_count2;j2++){
                                 vendorbill_Rec2.selectLine('item',j2);
@@ -1505,7 +1626,7 @@ define(
                 }
             }
         }
-        function createTo(shipment_item_type_t,actual_shipment_quantity,start_location,end_location,sku,dgjh_detail_id) {
+        function createTo(shipment_item_type_t,actual_shipment_quantity,start_location,end_location,sku,dgjh_detail_id,ex_fac_date) {
             var location_data = getLocation(end_location);
             var to_sub = location_data.subsidiary;
             var to_start_location = start_location;
@@ -1530,6 +1651,7 @@ define(
             var nb_to_rec = record.create({type:'transferorder',isDynamic:true});
             //主体字段
             nb_to_rec.setValue('subsidiary',to_sub);
+            nb_to_rec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));//日期
             nb_to_rec.setText('custbody_hl_bsq_order_type',shipment_item_type_t);//调拨类型
             nb_to_rec.setValue('location',to_start_location);
             nb_to_rec.setValue('transferlocation',to_end_location);
@@ -1553,7 +1675,7 @@ define(
             var nb_to_rec_id = nb_to_rec.save();
             return nb_to_rec_id;
         }
-        function toTransferIrIF(to_Id,actual_shipment_quantity,sku,start_location) {
+        function toTransferIrIF(to_Id,actual_shipment_quantity,sku,start_location,ex_fac_date) {
             var ifir_flag = 'N';
             if(to_Id){
                 //发货
@@ -1564,8 +1686,9 @@ define(
                         toType: 'itemfulfillment',
                         isDynamic: true,
                     });
-                    // to_if_rec.setText('shipstatus','已付运');
                     to_if_rec.setText('customform','BSQ_货品履行(内部交易)');//自定义表格
+                    // to_if_rec.setText('shipstatus','已付运');
+                    to_if_rec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
                     to_if_rec.setValue({fieldId:'shipstatus',value:'C'});
                     to_if_rec.setValue('approvalstatus',2);//已核准
                     var if_count = to_if_rec.getLineCount('item');
@@ -1606,6 +1729,7 @@ define(
                                     toType: 'itemreceipt',
                                     isDynamic: true,
                                 });
+                                to_ir_rec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
                                 var to_ir_id = to_ir_rec.save();
                                 log.debug('to_ir_id',to_ir_id);
                                 ifir_flag = 'Y_ifir';
@@ -1620,12 +1744,13 @@ define(
             }
             return ifir_flag;
         }
-        function createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgjh_id,create_it_flag) {
+        function createIt(start_location,on_location,end_location,shipment_item_type_t,dgjh_detail_id,sku,actual_receipt_quantity,dgjh_id,create_it_flag,ex_fac_date) {
             var s_location;
             var it_sub;
             var e_location;
             var in_location_type;
             var location_data;
+            // try{
             if(create_it_flag == 'ONE' || create_it_flag == 'TWO2'){
                 location_data = getLocation(end_location);
                 it_sub = location_data.subsidiary;
@@ -1664,6 +1789,7 @@ define(
             nb_it_rec.setValue('custbody_warehousing_type',in_location_type);//TODO:入库类型，测试  1,fba入库 2 ：海外仓入库
             nb_it_rec.setValue('location',s_location);//起始仓
             nb_it_rec.setValue('transferlocation',e_location);//目的仓
+            nb_it_rec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
             nb_it_rec.setValue('custbody_hl_bsq_booking_plan_number',dgjh_id);//订柜计划单号
             nb_it_rec.setValue('custbody_sl_df_detail',dgjh_detail_id);//订柜计划明细
             //明细
@@ -1682,8 +1808,11 @@ define(
 
             var nb_it_rec_id = nb_it_rec.save();
             return nb_it_rec_id;
+            // }catch (e) {
+            //     log.debug('创建it单报错',e);
+            // }
         }
-        function createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,create_po_flag,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two) {
+        function createPo(po_id,start_location,on_location,end_location,sku,actual_shipment_quantity,shipment_item_type_t,dgjh_detail_id,create_po_flag,nb_orgin_price_one,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two,shipment_type_flag,ex_fac_date) {
             var jcbi_data;
             var po_sub;
             var nb_price_data;
@@ -1692,141 +1821,149 @@ define(
             var po_add_price;
             var po_location;
             var location_data;
-            if(create_po_flag == 'ONE'){
-                jcbi_data = getJcbi(getLocation(start_location).subsidiary,getLocation(end_location).subsidiary);
-            }
-            else if(create_po_flag == 'TWO1'){
-                jcbi_data = getJcbi(getLocation(start_location).subsidiary,getLocation(on_location).subsidiary);
-            }
-            else if(create_po_flag == 'TWO2'){
-                jcbi_data = getJcbi(getLocation(on_location).subsidiary,getLocation(end_location).subsidiary);
-            }
-            //内部采购字段数据
-            if(create_po_flag == 'ONE' || create_po_flag == 'TWO2'){
-                location_data = getLocation(end_location);
-                po_sub = location_data.subsidiary;
-                po_location = location_data.ontheway_location;
-            }
-            else if(create_po_flag == 'TWO1'){
-                location_data = getLocation(on_location);
-                po_sub = location_data.subsidiary;
-                po_location = location_data.ontheway_location;
-            }
+            try{
+                if(create_po_flag == 'ONE'){
+                    jcbi_data = getJcbi(getLocation(start_location).subsidiary,getLocation(end_location).subsidiary);
+                }
+                else if(create_po_flag == 'TWO1'){
+                    jcbi_data = getJcbi(getLocation(start_location).subsidiary,getLocation(on_location).subsidiary);
+                }
+                else if(create_po_flag == 'TWO2'){
+                    jcbi_data = getJcbi(getLocation(on_location).subsidiary,getLocation(end_location).subsidiary);
+                }
+                //内部采购字段数据
+                if(create_po_flag == 'ONE' || create_po_flag == 'TWO2'){
+                    location_data = getLocation(end_location);
+                    po_sub = location_data.subsidiary;
+                    po_location = location_data.ontheway_location;
+                }
+                else if(create_po_flag == 'TWO1'){
+                    location_data = getLocation(on_location);
+                    po_sub = location_data.subsidiary;
+                    po_location = location_data.ontheway_location;
+                }
 
-            // if(create_po_flag == 'ONE' || create_po_flag == 'TWO1'){
-            //     nb_price_data = getNbPrice(po_id,jcbi_data,sku,start_location);
-            // }
-            // else if(create_po_flag == 'TWO2'){
-            //     nb_price_data = getNbPrice(po_id,getJcbi(getLocation(start_location).subsidiary,getLocation(on_location).subsidiary),sku,start_location);
-            // }
-            var po_currency_text = jcbi_data.currency_text;
-            var po_vendor = jcbi_data.nbVendor;
+                // if(create_po_flag == 'ONE' || create_po_flag == 'TWO1'){
+                //     nb_price_data = getNbPrice(po_id,jcbi_data,sku,start_location);
+                // }
+                // else if(create_po_flag == 'TWO2'){
+                //     nb_price_data = getNbPrice(po_id,getJcbi(getLocation(start_location).subsidiary,getLocation(on_location).subsidiary),sku,start_location);
+                // }
+                var po_currency_text = jcbi_data.currency_text;
+                var po_vendor = jcbi_data.nbVendor;
 
-            if(create_po_flag == 'ONE' || create_po_flag == 'TWO1'){
-                // po_rate = nb_price_data.nb_price;
-                // po_orgin_price = nb_price_data.nb_rate * nb_price_data.nb_hl;//基价
-                // po_add_price = Number(po_rate) - Number(po_orgin_price);//加价 
-                po_rate = nb_tran_price_one;   //交易价                nb_orgin_price_one ,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two
-                po_orgin_price = nb_orgin_price_one;   //基价
-                po_add_price = nb_add_price_one;   //加价 
+                if(create_po_flag == 'ONE' || create_po_flag == 'TWO1'){
+                    // po_rate = nb_price_data.nb_price;
+                    // po_orgin_price = nb_price_data.nb_rate * nb_price_data.nb_hl;//基价
+                    // po_add_price = Number(po_rate) - Number(po_orgin_price);//加价
+                    po_rate = nb_tran_price_one;   //交易价                nb_orgin_price_one ,nb_tran_price_one,nb_orgin_price_two,nb_tran_price_two,nb_add_price_one,nb_add_price_two
+                    po_orgin_price = nb_orgin_price_one;   //基价
+                    po_add_price = nb_add_price_one;   //加价
+                }
+                else if(create_po_flag == 'TWO2'){
+                    // po_rate = nb_price_data.nb_price * (Number(1) + Number(jcbi_data.jcbi.split("%")[0]/100));
+                    // po_orgin_price = nb_price_data.nb_price;//基价
+                    // po_add_price = Number(po_rate) - Number(po_orgin_price);//加价
+                    po_rate = nb_tran_price_two;   //交易价
+                    po_orgin_price = nb_orgin_price_two;   //基价
+                    po_add_price = nb_add_price_two;   //加价
+                }
+                var po_item = sku;
+                var po_taxcode = 16;//固定值"VAT_CN:VAT_0%"
+                var po_qty = '';
+                // if(shipment_type_flag == 'gnout'){
+                //     po_qty = '';
+                // }else {
+                po_qty = actual_shipment_quantity;
+                // }
+                var po_dingguijihuamingxi = dgjh_detail_id;
+                log.debug('出货计划类型',shipment_item_type_t);
+                // if(shipment_item_type_t.indexOf("国内直发FBA") != -1 || shipment_item_type_t.indexOf("海外仓转平台仓") != -1 || shipment_item_type_t.indexOf("供应商直发FBA") != -1){
+                //     if(po_sub == 23 || po_sub == 25){
+                //         po_location = 127;//FBA在途仓-香港
+                //     }else if(po_sub == 24){
+                //         po_location = 126;//FBA在途仓-美国
+                //     }
+                // }
+                // else if(shipment_item_type_t.indexOf("国内直发海外仓") != -1 || shipment_item_type_t.indexOf("供应商直发海外仓") != -1 || shipment_item_type_t.indexOf("海外仓转海外仓") != -1 || shipment_item_type_t.indexOf("FBA转海外仓") != -1){
+                //     if(po_sub == 23 || po_sub == 25){
+                //         po_location = 429;//海外仓在途仓-香港
+                //     }else if(po_sub == 24){
+                //         po_location = 428;//海外仓在途仓-美国
+                //     }
+                // }
+                log.debug('nb po ex_fac_date',ex_fac_date);
+                //创建内部采购
+                var poNbRec = record.create({type:'purchaseorder',isDynamic:true});
+                poNbRec.setValue('customform',132);//poNbRec.setValue('customform',100);测试环境
+                poNbRec.setValue('trandate',format.parse({value:ex_fac_date,type:format.Type.DATE}));
+                poNbRec.setValue('entity',po_vendor);//供应商
+                poNbRec.setValue('subsidiary',po_sub);//子公司
+                poNbRec.setText('currency',po_currency_text);//币种
+                poNbRec.setValue('location',po_location);//地点
+                poNbRec.setValue('custbody_dingguijihuamingxi',po_dingguijihuamingxi);//来源订柜计划明细
+                if(po_id){
+                    poNbRec.setValue('custbody_external_po',po_id);//关联外部po
+                }
+                poNbRec.setValue('approvalstatus',2);//已核准
+                //货品明细赋值
+                poNbRec.selectNewLine('item');
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'item',     //货品
+                    value:po_item,
+                    // line:0
+                });
+                // poNbRec.setCurrentSublistValue({
+                //     sublistId:'item',
+                //     fieldId:'taxcode',//税码
+                //     value:po_taxcode,
+                //     // line:0,
+                // });
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'rate',//单价
+                    value:po_rate,
+                    // line:0,
+                });
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'quantity',//数量
+                    value:po_qty,
+                    // line:0,
+                });
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'custcol_baseprice1',//基价单价
+                    value:po_orgin_price,
+                    // line:0,
+                });
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'custcol_overprice1',//加价单价
+                    value:po_add_price,
+                    // line:0,
+                });
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'custcol_baseprice2',//基价总额
+                    value:po_orgin_price * po_qty,
+                    // line:0,
+                });
+                poNbRec.setCurrentSublistValue({
+                    sublistId:'item',
+                    fieldId:'custcol_overprice2',//加价总额
+                    value:po_add_price * po_qty,
+                    // line:0,
+                });
+                poNbRec.commitLine('item');
+
+                var nb_po_id = poNbRec.save();
+
+                return nb_po_id;
+            }catch (e) {
+                log.debug('创建内部po报错',e);
             }
-            else if(create_po_flag == 'TWO2'){
-                // po_rate = nb_price_data.nb_price * (Number(1) + Number(jcbi_data.jcbi.split("%")[0]/100));
-                // po_orgin_price = nb_price_data.nb_price;//基价
-                // po_add_price = Number(po_rate) - Number(po_orgin_price);//加价 
-                po_rate = nb_tran_price_two;   //交易价
-                po_orgin_price = nb_orgin_price_two;   //基价
-                po_add_price = nb_add_price_two;   //加价 
-            }
-            var po_item = sku;
-            var po_taxcode = 16;//固定值"VAT_CN:VAT_0%"
-            var po_qty = actual_shipment_quantity;
-            var po_dingguijihuamingxi = dgjh_detail_id;
-            log.debug('出货计划类型',shipment_item_type_t);
-            // if(shipment_item_type_t.indexOf("国内直发FBA") != -1 || shipment_item_type_t.indexOf("海外仓转平台仓") != -1 || shipment_item_type_t.indexOf("供应商直发FBA") != -1){
-            //     if(po_sub == 23 || po_sub == 25){
-            //         po_location = 127;//FBA在途仓-香港
-            //     }else if(po_sub == 24){
-            //         po_location = 126;//FBA在途仓-美国
-            //     }
-            // }
-            // else if(shipment_item_type_t.indexOf("国内直发海外仓") != -1 || shipment_item_type_t.indexOf("供应商直发海外仓") != -1 || shipment_item_type_t.indexOf("海外仓转海外仓") != -1 || shipment_item_type_t.indexOf("FBA转海外仓") != -1){
-            //     if(po_sub == 23 || po_sub == 25){
-            //         po_location = 429;//海外仓在途仓-香港
-            //     }else if(po_sub == 24){
-            //         po_location = 428;//海外仓在途仓-美国
-            //     }
-            // }
-
-            //创建内部采购
-            var poNbRec = record.create({type:'purchaseorder',isDynamic:true});
-            // poNbRec.setText("customform","BSQ_采购订单(内部)");//表格样式,BSQ_采购订单(内部)
-            // poNbRec.setValue('customform',100);//test
-            poNbRec.setValue('customform',132);//product
-            poNbRec.setValue('entity',po_vendor);//供应商
-            poNbRec.setValue('subsidiary',po_sub);//子公司
-            poNbRec.setText('currency',po_currency_text);//币种
-            poNbRec.setValue('location',po_location);//地点
-            poNbRec.setValue('custbody_dingguijihuamingxi',po_dingguijihuamingxi);//来源订柜计划明细
-            if(po_id){
-                poNbRec.setValue('custbody_external_po',po_id);//关联外部po
-            }
-            poNbRec.setValue('approvalstatus',2);//已核准
-            //货品明细赋值
-            poNbRec.selectNewLine('item');
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'item',     //货品
-                value:po_item,
-                // line:0
-            });
-            // poNbRec.setCurrentSublistValue({
-            //     sublistId:'item',
-            //     fieldId:'taxcode',//税码
-            //     value:po_taxcode,
-            //     // line:0,
-            // });
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'rate',//单价
-                value:po_rate,
-                // line:0,
-            });
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'quantity',//数量
-                value:po_qty,
-                // line:0,
-            });
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'custcol_baseprice1',//基价单价
-                value:po_orgin_price,
-                // line:0,
-            });
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'custcol_overprice1',//加价单价
-                value:po_add_price,
-                // line:0,
-            });
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'custcol_baseprice2',//基价总额
-                value:po_orgin_price * po_qty,
-                // line:0,
-            });
-            poNbRec.setCurrentSublistValue({
-                sublistId:'item',
-                fieldId:'custcol_overprice2',//加价总额
-                value:po_add_price * po_qty,
-                // line:0,
-            });
-            poNbRec.commitLine('item');
-
-            var nb_po_id = poNbRec.save();
-
-            return nb_po_id;
         }
         function getNbPrice(po_id,jcbi_data,sku,start_location) {
             var nb_hl = Number(0);
