@@ -2,7 +2,7 @@
  * @Author: zhouyh
  * @Date: 2022-03-10 17:26:22
  * @LastEditors: zhouyh
- * @LastEditTime: 2022-03-21 22:54:03
+ * @LastEditTime: 2022-03-22 14:44:41
  * @Description: 请填写简介
  */
 /**
@@ -47,25 +47,25 @@
                      }
                      log.debug('dk_arr',dk_arr);
                      //提交信息至销售订单
-                     record.submitFields({
-                         type: 'salesorder',
-                         id: soId,
-                         values: {
-                            custbody_source_arrival_notice : dk_arr,
-                            custbody_oiin_so_claimed : false,
-                         }
+                    //  record.submitFields({
+                    //      type: 'salesorder',
+                    //      id: soId,
+                    //      values: {
+                    //         custbody_source_arrival_notice : dk_arr,
+                    //         custbody_oiin_so_claimed : false,
+                    //      }
                          
-                     });
-                    //  soRec.setValue('custbody_source_arrival_notice',dk_arr);
-                    //  soRec.setValue('custbody_oiin_so_claimed',false);//到款已认领
-                    //  var soSave = soRec.save();
-                    //  log.debug('销售订单',soSave);
+                    //  });
+                     soRec.setValue('custbody_source_arrival_notice',dk_arr);
+                     soRec.setValue('custbody_oiin_so_claimed',false);//到款已认领
+                     var soSave = soRec.save();
+                     log.debug('销售订单',soSave);
                      //取消已认领
-                    //  if(soSave){
+                     if(soSave){
                          rec.setValue('custrecord_sl_yrl',false);//已认领
                          rec.setValue('custrecord_sl_daid',false);//待定
-                         rec.save();
-                    //  }
+                         //rec.save();//工作流脚本不需要save()
+                     }
                  }catch(e){
                      log.debug('错误',e.message);
                  }
