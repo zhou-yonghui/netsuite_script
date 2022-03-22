@@ -2,7 +2,7 @@
  * @Author: zhouyh
  * @Date: 2022-03-10 17:26:22
  * @LastEditors: zhouyh
- * @LastEditTime: 2022-03-21 22:30:39
+ * @LastEditTime: 2022-03-21 22:54:03
  * @Description: 请填写简介
  */
 /**
@@ -17,7 +17,7 @@
          var approval_status = rec.getValue('custrecord_sl_dkzt');//状态
          log.debug('状态',approval_status);
          //2待认领  4 已认领  5 已取消 6 已审核?
-         if(approval_status == 5 || approval_status == 2){
+         if(approval_status == 5){
              var customer_des = rec.getValue('custrecord_customer_deposit_slip');//客户存款
              var gh = rec.getValue('custrecord_purchase_settlement');//购汇单
              if(customer_des || gh){
