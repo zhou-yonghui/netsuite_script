@@ -1,0 +1,1116 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+        <Author>scm39</Author>
+        <LastAuthor>admin</LastAuthor>
+        <Created>2021-03-19T03:39:00Z</Created>
+        <LastSaved>2021-12-29T15:54:40Z</LastSaved>
+    </DocumentProperties>
+    <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+        <KSOProductBuildVer dt:dt="string">2052-11.1.0.11194</KSOProductBuildVer>
+        <ICV dt:dt="string">86D21544C9294FA6B8A29C87E93234A6</ICV>
+    </CustomDocumentProperties>
+    <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+        <WindowWidth>22368</WindowWidth>
+        <WindowHeight>9420</WindowHeight>
+        <ProtectStructure>False</ProtectStructure>
+        <ProtectWindows>False</ProtectWindows>
+    </ExcelWorkbook>
+    <Styles>
+        <Style ss:ID="Default" ss:Name="Normal">
+            <Alignment ss:Vertical="Center" />
+            <Borders />
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat />
+            <Protection />
+        </Style>
+        <Style ss:ID="s49" />
+        <Style ss:ID="s50">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s51">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="8" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s52">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s53">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+        </Style>
+        <Style ss:ID="s54">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="28" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s55">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s56">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s57">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s58">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s59">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s60">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s61">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s62">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="8" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s63">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="0.00_);[Red]\(0.00\)" />
+        </Style>
+        <Style ss:ID="s64">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s65">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="8" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s66">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="8" />
+            <Interior />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s67">
+            <Alignment ss:Vertical="Bottom" ss:WrapText="1" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s68">
+            <Alignment ss:Vertical="Bottom" ss:WrapText="1" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Color="#FF0000" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s69">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s70">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s71">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s72">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s73">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s74">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s75">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+            <NumberFormat ss:Format="\ ##.00&quot; KGS&quot;" />
+        </Style>
+        <Style ss:ID="s76">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s77">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s78">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s79">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <NumberFormat ss:Format="0.00_ " />
+        </Style>
+        <Style ss:ID="s80">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s81">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+            <NumberFormat ss:Format="##\ &quot;PCS&quot;" />
+        </Style>
+        <Style ss:ID="s82">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+            <NumberFormat ss:Format="##\ &quot;CTNS&quot;" />
+        </Style>
+        <Style ss:ID="s83">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+            <NumberFormat ss:Format="\ 0.00&quot; KGS&quot;" />
+        </Style>
+        <Style ss:ID="s84">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+        </Style>
+        <Style ss:ID="s85">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s86">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="10" />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s87">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="10" />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s88">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+        </Style>
+        <Style ss:ID="s89">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+        </Style>
+        <Style ss:ID="s90">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+        </Style>
+        <Style ss:ID="s91">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s92">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="[$-409]dd/mmm/yy;@" />
+        </Style>
+        <Style ss:ID="s93">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="9" ss:Bold="1" />
+            <NumberFormat ss:Format="0.00\ &quot;CBM&quot;" />
+        </Style>
+        <Style ss:ID="s94">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="28" ss:Bold="1" />
+        </Style>
+        <Style ss:ID="s95">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" ss:Size="12" />
+            <Interior />
+        </Style>
+    </Styles>
+    <Worksheet ss:Name="PL">
+        <Names>
+            <NamedRange ss:Name="_FilterDatabase" ss:RefersTo="=PL!R1C1:R33C9" ss:Hidden="1" />
+        </Names>
+        <Table ss:ExpandedColumnCount="11" ss:ExpandedRowCount="40" x:FullColumns="1" x:FullRows="1" ss:StyleID="s53" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="17.4">
+            <Column ss:Index="1" ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="155.25" />
+            <Column ss:Index="2" ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="87" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="120" ss:Span="1" />
+            <Column ss:Index="5" ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="93" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="147.75" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="103.5" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="210.75" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="87" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="165" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="79.5" />
+            <Row ss:Height="37.5">
+                <Cell ss:StyleID="s94" ss:MergeAcross="8">
+                    <Data ss:Type="String">PACKING LIST</Data>
+                </Cell>
+                <Cell ss:StyleID="s54" />
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s95" ss:MergeAcross="6" />
+            </Row>
+            <Row ss:StyleID="s50">
+                <Cell ss:Index="7" ss:StyleID="s58" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59">
+                    <Data ss:Type="String">INV No:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">INV000000004</Data>
+                </Cell>
+            </Row>
+            <Row ss:StyleID="s50" ss:Height="15.6">
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s61" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59">
+                    <Data ss:Type="String">INV Date:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">2022/02/23</Data>
+                </Cell>
+                <Cell ss:StyleID="s69" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s61" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s92" />
+                <Cell ss:StyleID="s92" />
+                <Cell ss:StyleID="s69" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="15.6">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Shipper：</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">BESTQI INNOVATION(HONG KONG)TECHNOLOGY CO., LIMITED</Data>
+                </Cell>
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Address:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">RM 21 UNIT A 11/F TIN WUI IND BLDG NO 3 HING WONG ST TUEN MUN NT HONG KONG</Data>
+                </Cell>
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="15.6">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Importer：</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">ningboshi xuanmiaoliuzhaodianzishangwuyouxiangongsi</Data>
+                </Cell>
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Address:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">zhejiangsheng ningboshi jiangbeiqu jiangbei wandashangyeguangchang1zhuang220hao11-6</Data>
+                </Cell>
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">importer NO:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String">VAT:GB350321838EORI:GB350321838000</Data>
+                </Cell>
+                <Cell ss:StyleID="s67" />
+                <Cell ss:StyleID="s67" />
+                <Cell ss:StyleID="s68" />
+                <Cell ss:StyleID="s67" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s50">
+                <Cell ss:StyleID="s64">
+                    <Data ss:Type="String">Delivery to/Ultimate Consignee:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s61" />
+                <Cell ss:StyleID="s69" />
+                <Cell ss:StyleID="s69" />
+                <Cell ss:StyleID="s69" />
+            </Row>
+            <Row ss:StyleID="s50">
+                <Cell ss:StyleID="s64">
+                    <Data ss:Type="String">Address:</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s50">
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s50">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Notify party：</Data>
+                </Cell>
+                <Cell ss:StyleID="s63">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s70" />
+                <Cell ss:StyleID="s70" />
+                <Cell ss:StyleID="s70" />
+                <Cell ss:StyleID="s70" />
+                <Cell ss:StyleID="s71" />
+                <Cell ss:StyleID="s72" />
+                <Cell ss:StyleID="s72" >
+                    <Data ss:Type="String">TERMS：</Data>
+                </Cell>
+                <Cell ss:StyleID="s72" >
+                    <Data ss:Type="String"></Data>
+                </Cell>
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:Index="2" ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+            </Row>
+            <Row ss:StyleID="s52" ss:Height="24">
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">SKU</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Model No</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Description Of Goods</Data>
+                </Cell>
+                <Cell ss:StyleID="s74">
+                    <Data ss:Type="String">Container No&#10;</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Quantity（PCS）</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Package（CTNS）</Data>
+                </Cell>
+                <Cell ss:StyleID="s75">
+                    <Data ss:Type="String">Net Weight（KG）</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Gross Weight（KG）</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">CBM</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Material/Application</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMCM01ENN001</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMCM01EN</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Monitor mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">498</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">1970</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">3.40425</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">SPCC冷扎钢适用：17-32寸显示器VESA:75x75- 100x100旋转：+ -90°面板旋转：挂27寸电脑可以旋转360°承重：8KG夹桌底座适用厚度范围：（0~45mm/0~80mm）穿孔底座适用厚度范围：（0~55mm）立柱高度：420mm单臂展长度：398mm左右（面板中心到立柱中心距离）双臂展长度：795mm（两面板中心到中心距离）</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">TMSF04PSS001</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">TMSF04PS</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">TV Wall Mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">800</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">896</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">1.8536896</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">SPCC冷扎钢适用电视机：13-30承重：33l                                          VESA：75x75     100x100mm离墙距离：2-14”tilt：正负15度                              Rotate：360度</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMMS14LEN005</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMMS14LE</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Monitor Riser Stand</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">600</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">2652</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">8.7022608</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">刨花板+塑料1：净重：4.0kg; ; 毛重：4.5kg2：产品尺寸：105.5x27x10cm3：包装尺寸：44.2*32*12cm4：配件：15毫米E1刨花板，全封边。 颜色：浅木纹，安装后产品尺寸：105.5x27x10cm; 二合一螺丝，银色螺帽，带相近色美术贴，2个塑料卡槽长29.5cm。2个金属棒。5：包装方式：板材之间珍珠棉隔开，6面1.5厘米厚泡沫，4个纸护角，5层邮购加硬纸箱，无外箱</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">TMLT01PGL002</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">TMLT01PG</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">TV Wall Mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">2000.00</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number">0.00</Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">4600.00</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">11.00</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">SPCC冷扎钢拼接墙板可倾斜式电视挂架：             适用电视机尺寸：23-70            VESA：200x100-600x400                 承重：132l                         倾斜：0-7°                                   离墙：1.2&quot;配件：HDMI线*1、水平仪*1、线扎*5</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMSS06HNN002</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMSS06HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Monitor mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">500</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">1510</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">6.32875</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">铝合金+钢+塑料Description：Gas -Strut Desktop Flexi Mount （Single Screens ）Monitor Size Range ：17&quot; - 27&quot;  monitors TILT ：+35° /  -50°； Roll ：360°Materials UsedSPHC Coating &amp;Plastic Cover Aluminium &amp; Polish &amp; Coating Finished Carton Size：41*31*41 cm ≈0.0521m3Qty / Carton：4pcs / Carton MOQ：2 * 40 HQ1X 40 Container ：5000 pcsStandard：75*75, 100*100 mmMax Monitor Weight ：4.4~14.3 l ( 2.0~6.5 kg )Swivel：±180°Vertical Upright：9.84&#x27;&#x27; ( 250 mm )Extension ：20.6&#x27;&#x27; ( 524 mm )Carton Weight ：11.9 kg Color Option ：Black</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMDS05HNN001</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMDS05HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Monitor mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">500</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">2800</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">11.013625</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">铝合金+钢+塑料Description：Gas -Strut Desktop Flexi Mount （Dual Screens ）Monitor Size Range ：17&quot; - 27&quot;  monitorsTILT ：+35° /  -50°   ；   Roll ：360°Materials Used：SPHC Coating &amp;Plastic Cover Aluminium &amp; Polish &amp; Coating FinishedCarton Size：62.3 X 41.8 X 36 cm ≈0.094m3Qty / Carton：4pcs / Carton MOQ：2 * 40 HQ1X 40 Container ：2520 pcsStandard：75*75, 100*100 mmMax Monitor Weight（Per Arm） 4.4~14.3 l ( 2.0~6.5 kg )Swivel：±180°Vertical Upright：9.84&#x27;&#x27; ( 250 mm ) Extension ：20.6&#x27;&#x27; ( 524 mm )Carton Weight ：23.1 kgColor Option ：Black</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMCM02EGN001</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMCM02EG</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Monitor mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">300</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">870</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">3.14496</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">SPCC冷扎钢+玻璃MATERIAL;PLASTIC/STEELCOLOUR:BLACKMAX LOADING:8kg PER ARMVESA:100*100FUNCTION:90°TILT,?360°?SWIVEL,?360°?ROTATION</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMMS05HNK001</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMMS05HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Metal table</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">288</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">826.56</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">1.08072</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">钢材质：钢
+产品尺寸：14.6x9.3x4.7 in 
+承重：44lbs(20kg)
+可调节高度：3.9/4.7/5.5 in ,每档20mm                             面板规格：370x235x10mm，T&#x3D;1.0mm
+支撑脚圆管：φ18xφ20mm,T&#x3D;1.0mm</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMFR02HNN001</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMFR02HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Foot Rest Under Desk Cushion</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">504</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">423.36</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">3.87072</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">海绵主体模块配两个套子。里面的海绵做纱布内衬，主体尺寸435x320x110mm,增高部分尺寸：435x320x55mm</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMFR06HNN002</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">EMFR06HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">Foot Rest Under Desk Cushion</Data>
+                </Cell>
+                <Cell ss:StyleID="s76">
+                    <Data ss:Type="String">HASU4063934</Data>
+                </Cell>
+                <Cell ss:StyleID="s77">
+                    <Data ss:Type="Number">200</Data>
+                </Cell>
+                <Cell ss:StyleID="s78">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79" ss:Formula="=(RC[1]/RC[-1]-0.5)*RC[-1]">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell ss:StyleID="s79">
+                    <Data ss:Type="Number">1.4848</Data>
+                </Cell>
+                <Cell ss:StyleID="s73" >
+                    <Data ss:Type="String">海绵主体模块配两个套子。里面的海绵做纱布内衬，主体尺寸435x320x110mm</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="18">
+                <Cell ss:Index="3" ss:StyleID="s80">
+                    <Data ss:Type="String">TOTAL:</Data>
+                </Cell>
+                <Cell ss:StyleID="s80" />
+                <Cell ss:StyleID="s81" ss:Formula="=SUM(R[-10]C:R[-1]C)">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s82" ss:Formula="=SUM(R[-10]C:R[-1]C)">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s83" ss:Formula="=SUM(R[-10]C:R[-1]C)">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s83" ss:Formula="=SUM(R[-10]C:R[-1]C)">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s93" ss:Formula="=SUM(R[-10]C:R[-1]C)">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s93" />
+            </Row>
+            <Row ss:Height="21.95">
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s85" />
+                <Cell ss:StyleID="s85" />
+                <Cell ss:StyleID="s85" />
+                <Cell ss:StyleID="s86" />
+                <Cell ss:StyleID="s87" />
+                <Cell ss:StyleID="s87" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s88" />
+                <Cell ss:StyleID="s85" />
+                <Cell ss:StyleID="s85" />
+                <Cell ss:StyleID="s85" />
+            </Row>
+            <Row ss:Height="20.25">
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">shipmentID</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Reference ID</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Package（CTNS）</Data>
+                </Cell>
+                <Cell ss:StyleID="s73">
+                    <Data ss:Type="String">Quantity（PCS）</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FNFM0V5</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">1H14UGAQ</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">498</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FNB13K2</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">6TNFWGSN</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">800</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FN5TPYF</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">54EV94VS</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">600</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FLQLS4W</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">6CXVYOIU</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">0.00</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">2000.00</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FM1T0K1</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">79J1J36I</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">500</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FM1W9SF</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">2HY24T3O</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">500</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FLQG3NJ</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">8WP7S1FD</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">300</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FKYDB0H</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">6O92W75F</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">288</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FMBLJLQ</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">83K6S96H</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">504</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">FBA15FM1W84G</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">6JRJC8XL</Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String"></Data>
+                </Cell>
+                <Cell ss:StyleID="s89">
+                    <Data ss:Type="String">200</Data>
+                </Cell>
+            </Row>
+        </Table>
+        <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+            <PageSetup>
+                <Header x:Margin="0.51" />
+                <Footer x:Margin="0.51" />
+            </PageSetup>
+            <Selected />
+            <TopRowVisible>0</TopRowVisible>
+            <LeftColumnVisible>0</LeftColumnVisible>
+            <PageBreakZoom>100</PageBreakZoom>
+            <DoNotDisplayGridlines />
+            <Panes>
+                <Pane>
+                    <Number>3</Number>
+                    <ActiveRow>28</ActiveRow>
+                    <ActiveCol>4</ActiveCol>
+                    <RangeSelection>R29C5</RangeSelection>
+                </Pane>
+            </Panes>
+            <ProtectObjects>False</ProtectObjects>
+            <ProtectScenarios>False</ProtectScenarios>
+        </WorksheetOptions>
+    </Worksheet>
+</Workbook>

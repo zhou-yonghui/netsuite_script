@@ -1,0 +1,92 @@
+<style>
+.timeline {
+margin: 0;
+padding: 0;
+list-style: none;
+margin: 5px;
+counter-reset: step;
+}
+.timeline span {
+float: left;
+text-align: center;
+width: 150px;
+position: relative;
+}
+.timeline span:before {
+content: counter(step);
+counter-increment: step;
+line-height: 35px;
+width: 35px;
+height: 35px;
+display: block;
+border-radius: 100%;
+border: 1px solid #CCC;
+margin: 0 auto 15px auto;
+background: #fff;
+}
+.timeline span:after {
+content: '';
+width: 100%;
+height: 1px;
+background: #DDD;
+display: block;
+position: absolute;
+top: 17.5px;
+left: 61%;
+}
+.timeline span:last-child:after {
+content: none;
+}
+.timeline span.active {
+color: #8cc413;
+}
+.timeline span.active:before {
+background: #8cc413;
+}
+.timeline span:first-child:before {
+border-color: #8cc413;
+}
+.timeline span:first-child:after {
+background: #8cc413;
+}
+</style>
+<div class='timeline' >
+  <span id="PENDING" class="active">PENDING</span>
+  <span id="GET_INPUT">GET_INPUT</span>
+  <span id="MAP">MAP</span>
+  <span id="SHUFFLE">SHUFFLE</span>
+  <span id="REDUCE">REDUCE</span>
+  <span id="SUMMARIZE">SUMMARIZE</span>
+</div>
+<div style="clear: both;height:5px;"></div>
+<div id="result">
+</div>
+<div style="clear: both;height:5px;"></div>
+<div><a href="{recordUri}">查看结果</a></div>
+<script language=javascript>
+  var count = 0;
+  var int = self.setInterval("clock()", 1000);
+  function clock() {
+    jQuery("#result").html('');
+    for(var i = 0; i < count; i++) {
+      jQuery("#result").html(jQuery("#result").html() + '.');
+    }
+    if(count%5 == 0) {
+      count = 0;
+      jQuery.ajax({
+        url: "{backendUri}&taskId={taskIdString}",
+        success: function(result) {
+          var resultObj = JSON.parse(result);
+          jQuery(".timeline span").removeClass('active');
+          jQuery("#"+resultObj.stage).addClass("active");
+          if(resultObj.status == 'COMPLETE') {
+            jQuery("#SUMMARIZE").addClass("active");
+            window.clearInterval(int);
+          }
+          jQuery("#result").html("当前状态:"+resultObj.status);
+        }
+      });
+    }
+    count++;
+  }
+</script>

@@ -1,0 +1,191 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf lang="ZH_CN">
+
+    <head>
+        <style type="text/css">
+            body {
+                font-family:"Times New Roman", Times, serif;
+            }
+
+			table {
+				font-size: 9pt;
+				table-layout: fixed;
+				width: 100%;
+			}
+
+			th {
+				font-weight: bold;
+				font-size: 8pt;
+				vertical-align: middle;
+				padding: 5px 6px 3px;
+				background-color: #e3e3e3;
+				color: #333333;
+				padding-bottom: 10px;
+				padding-top: 10px;
+			}
+
+			td {
+				padding: 4px 6px;
+			}
+
+			b {
+				font-weight: bold;
+				color: #333333;
+			}
+		</style>
+    </head>
+
+    <body padding="0.5in 0.5in 0.5in 0.5in" size="A4">
+        <table align="center" border="0" cellpadding="1" cellspacing="1" class="a4" style="width:100%;">
+            <thead>
+                <tr>
+                    <td colspan="16" align="center" style="text-align: center;">
+                        <span style="font-size:20px;">
+                            <strong>
+                            {{chinese_demander_name}}
+                        </strong>
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="16" align="center" style="text-align: center;">
+                        <span style="font-size:20px;">
+                            <strong>采&nbsp;&nbsp;购&nbsp;&nbsp;合&nbsp;&nbsp;同</strong>
+                        </span>
+                        <br />
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="7"></td>
+                    <td colspan="1"></td>
+                    <td colspan="8" align="right">№：{{po_num}}</td>
+                </tr>
+                <tr>
+                    <td colspan="7">供方：{{chinese_full_name}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="8">需方：{{chinese_demander_name}}</td>
+                </tr>
+                <tr>
+                    <td colspan="7">地址：{{chinese_address}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="8">地址：{{chinese_demander_address}}</td>
+                </tr>
+                <tr>
+                    <td colspan="7">联系人：{{contact_person}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="8">联系人：{{employee}}</td>
+                </tr>
+                <tr>
+                    <td colspan="7">联系电话：</td>
+                    <td colspan="1"></td>
+                    <td colspan="8">联系电话：</td>
+                </tr>
+                <tr>
+                    <td colspan="7">订货日期：{{trandate}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="8">订货日期：{{trandate}}</td>
+                </tr>
+                <tr>
+                    <td colspan="16">
+                        <br />
+                        &nbsp;
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="8">经供需双方协商一致，签订本合同，共同遵守下列条款：</td>
+                    <td colspan="8"></td>
+                </tr>
+            </thead>
+            <tr>
+                <td colspan="1" border="1px" align="center" style="text-align: center; width: 40px;">
+                    <strong>序号</strong>
+                </td>
+                <td colspan="3" border="1px" align="center" style="text-align: center; width: 45px;">
+                    <strong>商品名称</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 69px;">
+                    <strong>型号</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 80px;">
+                    <strong>单位</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 100px;">
+                    <strong>数量</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 38px;">
+                    <strong>
+                        含税单价
+                        <br />
+                        （USD）
+                    </strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 40px;">
+                    <strong>
+                        价税合计
+                        <br />
+                        （USD）
+                    </strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 36px;">
+                    <strong>交货日期</strong>
+                </td>
+            </tr>
+            {{#each item_arr}}
+            <tr>
+                <td colspan="1" border="1px" align="center" style="text-align: center; width: 69px;">{{line_no}}</td>
+                <td colspan="3" border="1px" align="center" style="text-align: center; width: 95px;">{{sku_name}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 95px;">{{sku_old}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 90px;">{{unit}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 100px;">{{qty}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 38px;">${{unit_price}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 36px;">${{amount}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 70px;">{{cargo_ready_date}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td colspan="8" border="1px" align="center" style="text-align: center; width: 40px;">合计：</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 45px;">
+                    <strong>{{total_qty}}</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 69px;"></td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 80px;">
+                    <strong>${{total_amt}}</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 100px;"></td>
+            </tr>
+            <tr>
+                <td colspan="16">
+                    <br />
+                    &nbsp;
+                </td>
+            </tr>
+            {{#each gys_terms}}
+            <tr>
+                <td colspan="16">{{this}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td colspan="16">
+                    <br />
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">供方盖章：{{chinese_full_name}}</td>
+                <td colspan="8">需方：{{chinese_demander_name}}</td>
+            </tr>
+            <tr>
+                <td colspan="16">
+                    <br />
+                    &nbsp;
+                </td>
+            </tr>
+            <tr>
+                <td colspan="8">供方代表人签字：</td>
+                <td colspan="8">需方代表人签字：</td>
+            </tr>
+        </table>
+    </body>
+</pdf>

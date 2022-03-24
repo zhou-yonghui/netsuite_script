@@ -1,0 +1,167 @@
+<?xml version="1.0"?>
+<!DOCTYPE pdf PUBLIC "-//big.faceless.org//report" "report-1.1.dtd">
+<pdf lang="ZH_CN">
+
+    <head>
+        <style type="text/css">
+            body {
+                font-family:"Times New Roman", Times, serif;
+            }
+
+			table {
+				font-size: 9pt;
+				table-layout: fixed;
+				width: 100%;
+			}
+
+			th {
+				font-weight: bold;
+				font-size: 8pt;
+				vertical-align: middle;
+				padding: 5px 6px 3px;
+				background-color: #e3e3e3;
+				color: #333333;
+				padding-bottom: 10px;
+				padding-top: 10px;
+			}
+
+			td {
+				padding: 4px 6px;
+			}
+
+			b {
+				font-weight: bold;
+				color: #333333;
+			}
+		</style>
+    </head>
+
+    <body padding="0.5in 0.5in 0.5in 0.5in" size="A4">
+        <table align="center" border="0" cellpadding="1" cellspacing="1" class="a4" style="width:100%;">
+            <thead>
+                <tr>
+                    <td colspan="18" align="center" style="text-align: center;">
+                        <span style="font-size:20px;">
+                            <strong>
+                                订货合同
+                            </strong>
+                            <br/>&nbsp;
+                        </span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5">甲方：{{party_a}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="5">订单日期：{{trandate}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="6">订单编号：{{po_num}}</td>
+                </tr>
+                <tr>
+                    <td colspan="5">乙方：{{party_b}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="5">业务员：{{employee}}</td>
+                    <td colspan="1"></td>
+                    <td colspan="6">币　　种：{{currency_text}}</td>
+                </tr>
+                <tr>
+                    <td colspan="18"><br/>&nbsp;</td>
+                </tr>
+            </thead>
+            <tr>
+                <td colspan="6">一、甲方向乙方购买下列产品及报价</td>
+                <td colspan="6"></td>
+                <td colspan="6"></td>
+            </tr>
+            <tr>
+                <td colspan="1" border="1px" align="center" style="text-align: center; width: 40px;">
+                    <strong>序号</strong>
+                </td>
+                <td colspan="3" border="1px" align="center" style="text-align: center; width: 45px;">
+                    <strong>产品名称</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 69px;">
+                    <strong>规格型号</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 80px;">
+                    <strong>单位</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 100px;">
+                    <strong>数量</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 38px;">
+                    <strong>单价</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 40px;">
+                    <strong>金额</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 36px;">
+                    <strong>交货期</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 36px;">
+                    <strong>备注</strong>
+                </td>
+            </tr>
+            {{#each item_arr}}
+            <tr>
+                <td colspan="1" border="1px" align="center" style="text-align: center; width: 69px;">{{line_no}}</td>
+                <td colspan="3" border="1px" align="center" style="text-align: center; width: 95px;">{{sku_name}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 95px;">{{sku_old}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 90px;">{{unit}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 100px;">{{qty}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 38px;">${{unit_price}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 36px;">${{amount}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 70px;">{{cargo_ready_date}}</td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 70px;">{{remark}}</td>
+            </tr>
+            {{/each}}
+            <tr>
+                <td colspan="4" border="1px" align="center" style="text-align: center; width: 40px;">总计：</td>
+                <td colspan="12" border="1px" align="center" style="text-align: center; width: 45px;">
+                    <strong>${{total_amt}}   大写：{{amt_cn}}</strong>
+                </td>
+                <td colspan="2" border="1px" align="center" style="text-align: center; width: 69px;"></td>
+            </tr>
+            <tr>
+                <td colspan="18">
+                    二、交货方式：FOB NINGBO。
+                    <br />
+                    三、付款方式：预付20%，剩余80%月结，每月25号付款。
+                    <br />
+                    四、质量要求：依照《倍思奇供应商质量管理规范》执行。
+                    <br />
+                    五、验货标准：依照亚马逊相关标准及《倍思奇验货规范》执行。
+                    <br />
+                    六、包装方式：依照亚马逊相关标准执行及甲方指定的包装规范执行。
+                    <br />
+                    七、本合同为主合同《采购框架合同》的附件，与主合同具有同等法律效力。如与主合同不一致的，以本合同约定为准。
+                    <br />
+                    八、本合同自双方盖章或指定代表人签字之日起生效，一式两份，双方各执一份。
+                </td>
+            </tr>
+            <tr>
+                <td colspan="18"><br/>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="8">甲　方：{{party_a}}</td>
+                <td colspan="2"></td>
+                <td colspan="8">乙　方：{{party_b}}</td>
+            </tr>
+            <tr>
+                <td colspan="18"><br/>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="8">经办人：</td>
+                <td colspan="2"></td>
+                <td colspan="8">经办人：</td>
+            </tr>
+            <tr>
+                <td colspan="18"><br/>&nbsp;</td>
+            </tr>
+            <tr>
+                <td colspan="8">时　间：</td>
+                <td colspan="2"></td>
+                <td colspan="8">时　间：</td>
+            </tr>
+        </table>
+    </body>
+</pdf>

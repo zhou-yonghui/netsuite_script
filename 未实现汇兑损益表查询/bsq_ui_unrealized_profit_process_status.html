@@ -1,0 +1,148 @@
+<style>
+    .timeline {
+        margin: 100px 0px 0px 0px !important;
+        padding: 0;
+        list-style: none;
+        margin: 5px;
+        counter-reset: step;
+    }
+
+    .timeline span {
+        float: left;
+        text-align: center;
+        width: 150px;
+        position: relative;
+    }
+
+    .timeline span:before {
+        content: counter(step);
+        counter-increment: step;
+        line-height: 35px;
+        width: 35px;
+        height: 35px;
+        display: block;
+        border-radius: 100%;
+        border: 1px solid #CCC;
+        margin: 0 auto 15px auto;
+        background: #fff;
+    }
+
+    .timeline span:after {
+        content: '';
+        width: 100%;
+        height: 1px;
+        background: #DDD;
+        display: block;
+        position: absolute;
+        top: 17.5px;
+        left: 61%;
+    }
+
+    .timeline span:last-child:after {
+        content: none;
+    }
+
+    .timeline span.active:before {
+        background: #8cc413;
+    }
+
+    .lineNotes {
+        clear: both;
+        display: block;
+        width: 1000px;
+        padding: 100px;
+        text-align: center;
+    }
+
+    .btnSubmit {
+        width: 100px;
+        margin: 10px auto;
+    }
+
+    .btnSubmit input {
+        display: none;
+        cursor: pointer;
+        color: white;
+        border: #125ab2 1px solid !important;
+        border-radius: 3px;
+        background: linear-gradient(to bottom, #4c9dff 2%, #187bf2 100%) !important;
+        font-weight: bold;
+        height: 28px !important;
+        font-size: 14px !important;
+        padding: 0 12px !important;
+    }
+
+    .btnSubmit input:hover {
+        background: #1467cc !important;
+
+    }
+</style>
+<div class="timeline">
+    <span id="PENDING" class="active">启动</span>
+    <span id="GET_INPUT">查询</span>
+    <span id="MAP">分类</span>
+    <span id="SHUFFLE">清洗</span>
+    <span id="REDUCE">汇总</span>
+    <span id="SUMMARIZE">总结</span>
+    <span id="COMPLETE">完成</span>
+</div>
+<div class="lineNotes">
+    <div>
+        <span id="statusLabel">当前状态：启动</span>
+        <span id="statusText"></span>
+    </div>
+    <div class="btnSubmit">
+        <input type="button" id="resultPage" onclick="window.open('{recordUri}')" value="查看结果" />
+    </div>
+</div>
+</div>
+<script language=javascript>
+    var count = 0;
+    var interval = self.setInterval("clock()", 1000);
+    var statusName;
+    function clock() {
+        var statusText = jQuery("#statusText");
+        statusText.html("");
+        for (var i = 0; i < count; i++) {
+            statusText.html(statusText.html() + ".");
+        }
+        if (count % 5 == 0) {
+            count = 0;
+            jQuery.ajax({
+                url: "{backendUri}&taskId={taskIdString}",
+                success: function (result) {
+                    var resultObj = JSON.parse(result);
+                    var statusCode = resultObj.stage != null ? resultObj.stage : resultObj.status;
+                    var statusName = getStatusText(statusCode);
+                    var statusLabel = jQuery("#statusLabel");
+                    var statusText = jQuery("#statusText");
+                    jQuery(".timeline span").removeClass("active");
+                    jQuery("#" + statusCode).addClass("active");
+                    if (statusCode == "FAILED") {
+                        window.clearInterval(interval);
+                        statusLabel.html("当前状态：失败！");
+                        statusText.html("请联管理员分析系统日志");
+                        return;
+                    }
+                    else if (statusCode == "COMPLETE") {
+                        window.clearInterval(interval);
+                        document.getElementById("resultPage").style.display = "block";
+                    }
+                    statusLabel.html("当前状态：" + statusName);
+                    statusText.html("");
+                }
+            });
+        }
+        count++;
+    }
+    function getStatusText(statusCode) {
+        var statusItems = (document.getElementsByClassName("timeline")[0]).childNodes;
+        for (var itemIndex = 0; itemIndex < statusItems.length; itemIndex++) {
+            var item = statusItems[itemIndex];
+            if (item.id == statusCode) {
+                return item.innerText;
+            };
+        }
+        return statusCode;
+    }
+</script>

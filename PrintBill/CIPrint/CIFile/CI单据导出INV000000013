@@ -1,0 +1,868 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<?mso-application progid="Excel.Sheet"?>
+<Workbook xmlns="urn:schemas-microsoft-com:office:spreadsheet" xmlns:o="urn:schemas-microsoft-com:office:office" xmlns:x="urn:schemas-microsoft-com:office:excel" xmlns:ss="urn:schemas-microsoft-com:office:spreadsheet" xmlns:html="http://www.w3.org/TR/REC-html40" xmlns:dt="uuid:C2F41010-65B3-11d1-A29F-00AA00C14882">
+    <DocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+        <Author>ADMIN</Author>
+        <LastAuthor>admin</LastAuthor>
+        <Created>2019-04-12T03:33:02Z</Created>
+        <LastSaved>2022-01-11T10:09:22Z</LastSaved>
+    </DocumentProperties>
+    <CustomDocumentProperties xmlns="urn:schemas-microsoft-com:office:office">
+        <KSOProductBuildVer dt:dt="string">2052-11.1.0.11194</KSOProductBuildVer>
+        <ICV dt:dt="string">2938D82FD9FE49B9A0F2039FA8CDBBBC</ICV>
+    </CustomDocumentProperties>
+    <ExcelWorkbook xmlns="urn:schemas-microsoft-com:office:excel">
+        <WindowWidth>22368</WindowWidth>
+        <WindowHeight>9420</WindowHeight>
+        <ProtectStructure>False</ProtectStructure>
+        <ProtectWindows>False</ProtectWindows>
+    </ExcelWorkbook>
+    <Styles>
+        <Style ss:ID="Default" ss:Name="Normal">
+            <Alignment ss:Vertical="Center" />
+            <Borders />
+            <Font ss:FontName="宋体" x:CharSet="134" ss:Size="12" />
+            <Interior />
+            <NumberFormat />
+            <Protection />
+        </Style>
+        <Style ss:ID="s49" />
+        <Style ss:ID="s50">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+        </Style>
+        <Style ss:ID="s51">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="8" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s52">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s53">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s54">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s55">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="28" ss:Bold="1" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s56">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="28" ss:Bold="1" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s57">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="28" ss:Bold="1" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s58">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s59">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s60">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s61">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="8" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s62">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s63">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="8" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s64">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="8" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s65">
+            <Alignment ss:Vertical="Bottom" ss:WrapText="1" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s66">
+            <Alignment ss:Vertical="Bottom" ss:WrapText="1" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" ss:Color="#FF0000" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s67">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s68">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s69">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s70">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s71">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s72">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s73">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s74">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s75">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s76">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s77">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s78">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s79">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s80">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s81">
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s82">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat />
+        </Style>
+        <Style ss:ID="s83">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s84">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s85">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Bold="1" ss:Underline="Single" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s86">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Bold="1" ss:Underline="Single" />
+            <Interior />
+            <NumberFormat ss:Format="##\ &quot;PCS&quot;" />
+        </Style>
+        <Style ss:ID="s87">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Underline="Single" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s88">
+            <Alignment ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Underline="Single" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s89">
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Underline="Single" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s90">
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Underline="Single" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s91">
+            <Alignment ss:Horizontal="Left" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="9" ss:Bold="1" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s92">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s93">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s94">
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="12" />
+            <Interior />
+            <NumberFormat ss:Format="\$#,##0.00;\-\$#,##0.00" />
+        </Style>
+        <Style ss:ID="s95">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Bold="1" ss:Underline="Single" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s96">
+            <Borders />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" ss:Bold="1" ss:Underline="Single" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s97">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Bottom" />
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="28" ss:Bold="1" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s98">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s99">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s100">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s101">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s102">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s103">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+        </Style>
+        <Style ss:ID="s104">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" ss:WrapText="1" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="0.00;[Red]0.00" />
+        </Style>
+        <Style ss:ID="s105">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+        <Style ss:ID="s106">
+            <Alignment ss:Horizontal="Center" ss:Vertical="Center" />
+            <Borders>
+                <Border ss:Position="Bottom" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Left" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Right" ss:LineStyle="Continuous" ss:Weight="1" />
+                <Border ss:Position="Top" ss:LineStyle="Continuous" ss:Weight="1" />
+            </Borders>
+            <Font ss:FontName="微软雅黑" x:CharSet="134" x:Family="Swiss" ss:Size="10" />
+            <Interior />
+            <NumberFormat ss:Format="@" />
+        </Style>
+    </Styles>
+    <Worksheet ss:Name="CI">
+        <Table ss:ExpandedColumnCount="12" ss:ExpandedRowCount="35" x:FullColumns="1" x:FullRows="1" ss:StyleID="s52" ss:DefaultColumnWidth="54" ss:DefaultRowHeight="17.4">
+            <Column ss:Index="1" ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="155.25" />
+            <Column ss:Index="2" ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="91.5" />
+            <Column ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="120.75" />
+            <Column ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="150" />
+            <Column ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="120.75" />
+            <Column ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="127.5" />
+            <Column ss:StyleID="s53" ss:AutoFitWidth="0" ss:Width="150" />
+            <Column ss:StyleID="s54" ss:AutoFitWidth="0" ss:Width="150.75" />
+            <Column ss:StyleID="s54" ss:AutoFitWidth="0" ss:Width="286.5" />
+            <Column ss:StyleID="s52" ss:AutoFitWidth="0" ss:Width="188.25" />
+            <Row ss:Height="49.5">
+                <Cell ss:StyleID="s97" ss:MergeAcross="8">
+                    <Data ss:Type="String">COMMERCIAL INVOICE</Data>
+                </Cell>
+            </Row>
+            <Row>
+                <Cell ss:Index="8" ss:StyleID="s58">
+                    <Data ss:Type="String">INV No:</Data>
+                </Cell>
+                <Cell ss:StyleID="s58">
+                    <Data ss:Type="String">INV000000013</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s58">
+                    <Data ss:Type="String">INV Date:</Data>
+                </Cell>
+                <Cell ss:StyleID="s58">
+                    <Data ss:Type="String">2022/03/07</Data>
+                </Cell>
+                <Cell ss:StyleID="s94" />
+            </Row>
+            <Row ss:StyleID="s50" ss:Height="15.6">
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s59" />
+                <Cell ss:StyleID="s60" />
+                <Cell ss:StyleID="s58" />
+                <Cell ss:StyleID="s58" />
+                <Cell ss:StyleID="s94" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="15.6">
+                <Cell ss:StyleID="s61">
+                    <Data ss:Type="String">Shipper：</Data>
+                </Cell>
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">BESTQI INNOVATION(HONG KONG)TECHNOLOGY CO., LIMITED</Data>
+                </Cell>
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s61">
+                    <Data ss:Type="String">Address:</Data>
+                </Cell>
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">RM 21 UNIT A 11/F TIN WUI IND BLDG NO 3 HING WONG ST TUEN MUN NT HONG KONG</Data>
+                </Cell>
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s61" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="15.6">
+                <Cell ss:StyleID="s61">
+                    <Data ss:Type="String">Importer：</Data>
+                </Cell>
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">QIRUN ELECTRONICS (HONGKONG) CO.,LIMITED</Data>
+                </Cell>
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s61">
+                    <Data ss:Type="String">Address:</Data>
+                </Cell>
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">SUITE 913B 9/F OCEAN CTR HARBOUR CITY 5 CANTON RD TST KL</Data>
+                </Cell>
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="79.2">
+                <Cell ss:StyleID="s61">
+                    <Data ss:Type="String">importer NO:</Data>
+                </Cell>
+                <Cell ss:StyleID="s65">
+                    <Data ss:Type="String">BOND:21C001AASimport NO:211101-12367</Data>
+                </Cell>
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s66" />
+                <Cell ss:StyleID="s65" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:StyleID="s61" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Delivery to/Ultimate Consignee:</Data>
+                </Cell>
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">GOLDEN STATE FC LLC</Data>
+                </Cell>
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s60" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">Address:</Data>
+                </Cell>
+                <Cell ss:StyleID="s62">
+                    <Data ss:Type="String">3923 S B STREET STOCKTON CA 95206 USA SMF3</Data>
+                </Cell>
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s67" />
+                <Cell ss:StyleID="s67" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s67" />
+                <Cell ss:StyleID="s67" />
+            </Row>
+            <Row>
+                <Cell ss:StyleID="s61">
+                    <Data ss:Type="String">Notify party：</Data>
+                </Cell>
+                <Cell ss:StyleID="s68">
+                    <Data ss:Type="String">SAME THE CONSIGNEE</Data>
+                </Cell>
+                <Cell ss:StyleID="s68" />
+                <Cell ss:StyleID="s68" />
+                <Cell ss:StyleID="s68" />
+                <Cell ss:StyleID="s68" />
+                <Cell ss:StyleID="s69" />
+                <Cell ss:StyleID="s70" >
+                    <Data ss:Type="String">TERMS：</Data>
+                </Cell>
+                <Cell ss:StyleID="s70" >
+                    <Data ss:Type="String">FOB 上海</Data>
+                </Cell>
+            </Row>
+            <Row ss:StyleID="s51" ss:Height="13.2">
+                <Cell ss:Index="2" ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s62" />
+                <Cell ss:StyleID="s63" />
+                <Cell ss:StyleID="s64" />
+                <Cell ss:StyleID="s64" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s98" ss:MergeDown="1">
+                    <Data ss:Type="String">SKU</Data>
+                </Cell>
+                <Cell ss:StyleID="s99" ss:MergeDown="1">
+                    <Data ss:Type="String">Model</Data>
+                </Cell>
+                <Cell ss:StyleID="s100" ss:MergeDown="1">
+                    <Data ss:Type="String">Description Of Goods&#10;</Data>
+                </Cell>
+                <Cell ss:StyleID="s101" ss:MergeDown="1">
+                    <Data ss:Type="String">HS CODE&#10;</Data>
+                </Cell>
+                <Cell ss:StyleID="s102" ss:MergeDown="1">
+                    <Data ss:Type="String">Container No&#10;</Data>
+                </Cell>
+                <Cell ss:StyleID="s103" ss:MergeDown="1">
+                    <Data ss:Type="String">Country of Origin&#10;</Data>
+                </Cell>
+                <Cell ss:StyleID="s104" ss:MergeDown="1">
+                    <ss:Data ss:Type="String" xmlns="http://www.w3.org/TR/REC-html40">
+                        <Font x:Family="Swiss">Quantity&#10;</Font>
+                        <Font x:Family="Swiss" html:Color="#000000"></Font>
+                    </ss:Data>
+                </Cell>
+                <Cell ss:StyleID="s105" ss:MergeDown="1">
+                    <Data ss:Type="String">Unit Price</Data>
+                </Cell>
+                <Cell ss:StyleID="s106" ss:MergeDown="1">
+                    <Data ss:Type="String">Amount</Data>
+                </Cell>
+                <Cell ss:Index="12" ss:StyleID="s59" />
+            </Row>
+            <Row ss:Height="53" />
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s71" >
+                    <Data ss:Type="String">EMDS05HNN002</Data>
+                </Cell>
+                <Cell ss:StyleID="s71">
+                    <Data ss:Type="String">EMDS05HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s71">
+                    <Data ss:Type="String">Monitor mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s81" >
+                    <Data ss:Type="String">8302.50.0000</Data>
+                </Cell>
+                <Cell ss:StyleID="s81" >
+                    <Data ss:Type="String">TGBU4324071</Data>
+                </Cell>
+                <Cell ss:StyleID="s71">
+                    <Data ss:Type="String">China</Data>
+                </Cell>
+                <Cell ss:StyleID="s82">
+                    <Data ss:Type="Number">3000.00</Data>
+                </Cell>
+                <Cell ss:StyleID="s83">
+                    <Data ss:Type="String">USD2.63</Data>
+                </Cell>
+                <Cell ss:StyleID="s83">
+                    <Data ss:Type="String">USD7890.00</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s71" >
+                    <Data ss:Type="String">EMSS09HNN001</Data>
+                </Cell>
+                <Cell ss:StyleID="s71">
+                    <Data ss:Type="String">EMSS09HN</Data>
+                </Cell>
+                <Cell ss:StyleID="s71">
+                    <Data ss:Type="String">Monitor mount</Data>
+                </Cell>
+                <Cell ss:StyleID="s81" >
+                    <Data ss:Type="String">8302.50.0000</Data>
+                </Cell>
+                <Cell ss:StyleID="s81" >
+                    <Data ss:Type="String">TGBU4324071</Data>
+                </Cell>
+                <Cell ss:StyleID="s71">
+                    <Data ss:Type="String">China</Data>
+                </Cell>
+                <Cell ss:StyleID="s82">
+                    <Data ss:Type="Number">100</Data>
+                </Cell>
+                <Cell ss:StyleID="s83">
+                    <Data ss:Type="String">USD2.85</Data>
+                </Cell>
+                <Cell ss:StyleID="s83">
+                    <Data ss:Type="String">USD285.00</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s85">
+                    <Data ss:Type="String">TOTAL:</Data>
+                </Cell>
+                <Cell ss:StyleID="s86" ss:Formula="=SUM(R[-11]C:R[-1]C)">
+                    <Data ss:Type="Number"></Data>
+                </Cell>
+                <Cell ss:StyleID="s87" />
+                <Cell ss:StyleID="s95">
+                    <Data ss:Type="String">USD8175.00</Data>
+                </Cell>
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s88" />
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s84" />
+                <Cell ss:Index="6" ss:StyleID="s85">
+                    <Data ss:Type="String">Freight</Data>
+                </Cell>
+                <Cell ss:StyleID="s89" />
+                <Cell ss:StyleID="s90" />
+                <Cell ss:StyleID="s96" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s92" />
+                <Cell ss:StyleID="s93" />
+                <Cell ss:StyleID="s93" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s92" />
+                <Cell ss:StyleID="s93" />
+                <Cell ss:StyleID="s93" />
+            </Row>
+            <Row ss:Height="15.6">
+                <Cell ss:StyleID="s84" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s92" />
+                <Cell ss:StyleID="s93" />
+                <Cell ss:StyleID="s93" />
+            </Row>
+            <Row>
+                <Cell ss:Index="2" ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+                <Cell ss:StyleID="s91" />
+            </Row>
+        </Table>
+        <WorksheetOptions xmlns="urn:schemas-microsoft-com:office:excel">
+            <PageSetup>
+                <Header x:Margin="0.51" />
+                <Footer x:Margin="0.51" />
+            </PageSetup>
+            <Print>
+                <ValidPrinterInfo />
+                <PaperSizeIndex>9</PaperSizeIndex>
+            </Print>
+            <Selected />
+            <TopRowVisible>10</TopRowVisible>
+            <LeftColumnVisible>0</LeftColumnVisible>
+            <PageBreakZoom>100</PageBreakZoom>
+            <DoNotDisplayGridlines />
+            <Panes>
+                <Pane>
+                    <Number>3</Number>
+                    <ActiveRow>22</ActiveRow>
+                    <ActiveCol>8</ActiveCol>
+                    <RangeSelection>R23C9</RangeSelection>
+                </Pane>
+            </Panes>
+            <ProtectObjects>False</ProtectObjects>
+            <ProtectScenarios>False</ProtectScenarios>
+        </WorksheetOptions>
+    </Worksheet>
+</Workbook>
