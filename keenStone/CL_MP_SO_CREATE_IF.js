@@ -95,17 +95,18 @@
                         }catch(e){
                             log.debug('生成履行单报错',e);
                         }
-                        // try{
-                        //     if(if_id){
-                        //         //开票
-                        //         var invoice_Rec = record.transform({fromType:'salesorder',fromId:soId,toType:'invoice',isDynamic: true});
-                        //         // invoice_Rec.setValue('approvalstatus',2);//已核准
-                        //         invoice_Id = invoice_Rec.save();
-                        //         log.debug('发票id',invoice_Id);
-                        //     }
-                        // }catch(e){
-                        //     log.debug('履行单后生成发票报错',e);
-                        // }
+                        try{
+                            if(if_id){
+                                //开票
+                                var invoice_Rec = record.transform({fromType:'salesorder',fromId:soId,toType:'invoice',isDynamic: true});
+                                invoice_Rec.setValue({fieldId:'trandate',value:format.parse({value:so_trandate,type:format.Type.DATE})});
+                                invoice_Rec.setValue('approvalstatus',2);//已核准
+                                invoice_Id = invoice_Rec.save();
+                                log.debug('发票id',invoice_Id);
+                            }
+                        }catch(e){
+                            log.debug('履行单后生成发票报错',e);
+                        }
                     }
                     // else if(order_status == 'F'){//待开票
                     //     try{
