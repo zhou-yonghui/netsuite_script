@@ -140,7 +140,7 @@
                         });
                         var dgjh_detail_id = dg_rec.getCurrentSublistValue({
                             sublistId:'recmachcustrecord_sl_rp_body',
-                            fieldId:'internalid',        //订柜计划明细id
+                            fieldId:'id',        //订柜计划明细id
                         });
                         var wb_po_ir = dg_rec.getCurrentSublistValue({
                             sublistId:'recmachcustrecord_sl_rp_body',
@@ -574,20 +574,27 @@
                                 }
                                 else if(shipment_type_flag == 'vendor'){
                                     if(actual_qty){
-                                        if(actual_qty > cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
-                                            dg_rec.setCurrentSublistValue({
-                                                sublistId:'recmachcustrecord_sl_rp_body',
-                                                fieldId:'custrecord_sl_document_status1',        //发运状态
-                                                value:11,                         //部分发运
-                                            });
-                                        }
-                                        else if(actual_qty == cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
+                                        if(cumulative_shipment_quantity > 0){
                                             dg_rec.setCurrentSublistValue({
                                                 sublistId:'recmachcustrecord_sl_rp_body',
                                                 fieldId:'custrecord_sl_document_status1',        //发运状态
                                                 value:2,                         //已发运
                                             });
                                         }
+                                        // if(actual_qty > cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
+                                        //     dg_rec.setCurrentSublistValue({
+                                        //         sublistId:'recmachcustrecord_sl_rp_body',
+                                        //         fieldId:'custrecord_sl_document_status1',        //发运状态
+                                        //         value:11,                         //部分发运
+                                        //     });
+                                        // }
+                                        // else if(actual_qty == cumulative_shipment_quantity && cumulative_shipment_quantity > 0){
+                                        //     dg_rec.setCurrentSublistValue({
+                                        //         sublistId:'recmachcustrecord_sl_rp_body',
+                                        //         fieldId:'custrecord_sl_document_status1',        //发运状态
+                                        //         value:2,                         //已发运
+                                        //     });
+                                        // }
                                     }
                                 }
                                 if(cumulative_quantity_received < cumulative_shipment_quantity && cumulative_quantity_received > 0){
